@@ -1,0 +1,47 @@
+.columnimg {
+    float: left;
+    width: 25%;
+    padding-inline: 0;
+    padding-block: 0;
+  }
+  /* Style the images inside the grid */
+  .columnimg img {
+    opacity: 0.8;
+    cursor: pointer;
+    height:300px;
+    border-radius: 0%;
+    transition: 0.3s;
+    padding-inline: 0;
+    padding-block: 0;
+  }
+  
+  .columnimg img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  /* The expanding image container (positioning is needed to position the close button and the text) */
+  .containerimg {
+    position: relative;
+    display: none;
+    transition: 0.3s;
+  }
+  
+  /* Expanding image text */
+  #imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 20%;
+    color: white;
+    font-size: 20px;
+  }
+  
+  /* Closable button inside the image */
+  .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 18%;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }
