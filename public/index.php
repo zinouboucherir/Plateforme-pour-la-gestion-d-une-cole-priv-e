@@ -1,11 +1,11 @@
 <?php
-
 use app\core\Application;
 use app\controllers\HomeController;
 use app\controllers\AdminHomeController;
 use app\controllers\AdminArticleController;
 use app\controllers\ContactController;
 use app\controllers\AuthController;
+use app\controllers\ShowArticleController;
 
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
@@ -21,7 +21,8 @@ $app->router->get('/',[HomeController::class,'index']);
 $app->router->get('/admin',[AdminHomeController::class,'index']);
 $app->router->get('/adminArticles',[AdminArticleController::class,'index']);
 $app->router->post('/adminArticles',[AdminArticleController::class,'addArticles']);    // HOME PAGE :: /
-$app->router->get('/home',[HomeController::class,'index']);  // HOME PAGE :: /home
+$app->router->get('/home',[HomeController::class,'index']); 
+$app->router->get('/showarticle',[ShowArticleController::class,'ShowArticle']);   // HOME PAGE :: /home
 $app->router->get('/contact',[ContactController::class , 'index']);  // CoONTACT PAGE :: /contact
 $app->router->post('/contact',[ContactController::class, 'post']);
 $app->router->get('/login',[AuthController::class, 'login']);
