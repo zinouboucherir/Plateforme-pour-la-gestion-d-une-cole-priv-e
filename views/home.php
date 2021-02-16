@@ -39,12 +39,12 @@
         {
         ?>
         <div class="col-3 mb-2">
-            <div class="card" style="width:18rem;">
-                <img src=<?php echo $data['lien'] ?> class="card-img-top" width="100" height="300" alt="...">
+            <div class="card" style="width:18rem; height:400px">
+                <img src=<?php echo $data['lien'] ?> class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title"><?php echo $data['titre']?></h5>
                      <p class="card-text"><?php echo  substr($data['descr'],0,100)?>...</p>
-                     <center><a href="#" class="btn btn-info text-center">Afficher la suite</a></center>
+                     <center><a href="<?php echo "showarticle?id=".$data['id']?>" class="btn btn-info text-center">Afficher la suite</a></center>
                 </div>
             </div>
         </div>
