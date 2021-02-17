@@ -6,6 +6,9 @@ use app\controllers\AdminArticleController;
 use app\controllers\ContactController;
 use app\controllers\AuthController;
 use app\controllers\ShowArticleController;
+use app\controllers\AdminPresentationController;
+use app\controllers\PresentationController;
+
 
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
@@ -24,7 +27,14 @@ $app->router->post('/addArticles',[AdminArticleController::class,'addArticles'])
 $app->router->get('/home',[HomeController::class,'index']); 
 $app->router->get('/showarticle',[ShowArticleController::class,'ShowArticle']); 
 $app->router->get('/Articledelete',[AdminArticleController::class,'supprimerArticle']); 
-$app->router->post('/Articleupdate',[AdminArticleController::class,'editArticles']); // HOME PAGE :: /home
+$app->router->post('/Articleupdate',[AdminArticleController::class,'editArticles']);
+
+$app->router->get('/adminPresentation',[AdminPresentationController::class,'index']);
+$app->router->post('/addPresentation',[AdminPresentationController::class,'addPresentation']);
+$app->router->get('/presentationdelete',[AdminPresentationController::class,'supprimerPresentation']); 
+$app->router->post('/presentationupdate',[AdminPresentationController::class,'editPresentation']); 
+$app->router->get('/presentation',[PresentationController::class,'index']);
+// HOME PAGE :: /home
 $app->router->get('/contact',[ContactController::class , 'index']);  // CoONTACT PAGE :: /contact
 $app->router->post('/contact',[ContactController::class, 'post']);
 $app->router->get('/login',[AuthController::class, 'login']);

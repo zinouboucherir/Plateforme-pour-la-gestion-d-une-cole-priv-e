@@ -17,17 +17,19 @@
     <script src="JS/accueiljs.js"></script>
 </head>
 <body>
+
 <?php include('adminMenu.php') ?>
+
 <div class="container-xl">
 	<div class="table-responsive">
 		<div class="table-wrapper">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Gestion <b>des articles</b></h2>
+						<h2>Gestion <b>des presentations</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter un nouvel article</span></a>	
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter une nouvelle présentation</span></a>	
 					</div>
 				</div>
 			</div>
@@ -35,22 +37,20 @@
 			<table class="table table-striped table-wrapper-scroll-y my-custom-" id="myTable" >
 				<thead>
 					<tr>
-						<th>Titre</th>
-						<th>Type</th>
+                        <th>Titre</th>
 						<th>Description</th>
 						<th>Image</th>
 					</tr>
 				</thead>
 				<tbody>
                 <?php
-                    while ($data=$articles->fetch())
+                    while ($data=$presentations->fetch())
                       {
                         ?>
                     <tr>
-						<td style="width:15%;"><?php echo $data['titre']?></td>
-                        <td style="width: 15%;"><?php echo $data['type']?></td>						
-                        <td style=" word-break: break-all;width: 30%;"> <?php echo $data['descr']?></td>
-                        <td><img src=<?php echo $data['lien']?> width="100%" height="200"></td>
+                        <td style="width:15%;"><?php echo $data['titre']?></td>		
+                        <td style=" word-break: break-all;width: 30%;"> <?php echo $data['texte']?></td>
+                        <td><img src=<?php echo $data['image']?> width="100%" height="200"></td>
                         <td style="width: 10%;" >
 							<a href="#editEmployeeModal<?php echo $data['id']?>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal<?php echo $data['id']?>" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -71,7 +71,7 @@
 						</div>
 						<div class="modal-footer">
 							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"Articledelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+							<a href="<?php echo"presentationdelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
 						</div>
 				</form>
 			</div>
@@ -81,24 +81,20 @@
 <div id="editEmployeeModal<?php echo $data['id']?>" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-		<form  method="POST" action="Articleupdate" enctype="multipart/form-data">>
+		<form  method="POST" action="presentationupdate" enctype="multipart/form-data">>
 				<div class="modal-header">						
-					<h4 class="modal-title">Modifier Article</h4>
+					<h4 class="modal-title">Modifier Présentation</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
 					<div class="form-group">
 					<input hidden type="text" class="form-control" name="id" required value="<?php echo $data['id']?>">
-						<label>titre</label>
+                    <label>titre</label>
 						<input type="text" class="form-control" name="titre" required value="<?php echo $data['titre']?>">
 					</div>
 					<div class="form-group">
 						<label>Description</label>
-						<textarea class="form-control" name="descr" required ><?php echo $data['descr']?></textarea>
-					</div>
-					<div class="form-group">
-						<label>type</label>
-						<input type="text" name="type" class="form-control" value="<?php echo $data['type']?>" required>
+						<textarea class="form-control" name="texte" required ><?php echo $data['texte']?></textarea>
 					</div>		
                     <div class="form-group">
 						<label>image</label>
@@ -115,7 +111,7 @@
 </div>
         <?php
           }
-        $articles->closeCursor();
+        $presentations->closeCursor();
         ?>
 			</tbody>
 		</table>
@@ -126,23 +122,20 @@
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form  method="POST" action="addArticles" enctype="multipart/form-data">
+			<form  method="POST" action="addPresentation" enctype="multipart/form-data">
 				<div class="modal-header">						
-					<h4 class="modal-title">Ajouter Article</h4>
+					<h4 class="modal-title">Ajouter Presentation</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
-				<div class="modal-body">					
-					<div class="form-group">
-						<label>titre</label>
-						<input type="text" class="form-control" name="titre" required>
-					</div>
+				<div class="modal-body">	
+                <div class="form-group">
+                <label>titre</label>
+						<input type="text" class="form-control" name="titre" required >				
+                </div>
+        
 					<div class="form-group">
 						<label>Description</label>
-						<textarea class="form-control" name="descr" required></textarea>
-					</div>
-					<div class="form-group">
-						<label>type</label>
-						<input type="text" name="type" class="form-control" required>
+						<textarea class="form-control" name="texte" required></textarea>
 					</div>		
                     <div class="form-group">
 						<label>image</label>
