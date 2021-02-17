@@ -20,9 +20,11 @@ $app = new Application($ROOT_DIR,$STORAGE_DIR);
 $app->router->get('/',[HomeController::class,'index']); 
 $app->router->get('/admin',[AdminHomeController::class,'index']);
 $app->router->get('/adminArticles',[AdminArticleController::class,'index']);
-$app->router->post('/adminArticles',[AdminArticleController::class,'addArticles']);    // HOME PAGE :: /
+$app->router->post('/addArticles',[AdminArticleController::class,'addArticles']);    // HOME PAGE :: /
 $app->router->get('/home',[HomeController::class,'index']); 
-$app->router->get('/showarticle',[ShowArticleController::class,'ShowArticle']);   // HOME PAGE :: /home
+$app->router->get('/showarticle',[ShowArticleController::class,'ShowArticle']); 
+$app->router->get('/Articledelete',[AdminArticleController::class,'supprimerArticle']); 
+$app->router->post('/Articleupdate',[AdminArticleController::class,'editArticles']); // HOME PAGE :: /home
 $app->router->get('/contact',[ContactController::class , 'index']);  // CoONTACT PAGE :: /contact
 $app->router->post('/contact',[ContactController::class, 'post']);
 $app->router->get('/login',[AuthController::class, 'login']);

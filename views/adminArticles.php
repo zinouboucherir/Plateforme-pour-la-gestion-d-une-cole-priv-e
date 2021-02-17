@@ -18,7 +18,6 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light ">
-   
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
    </button>
@@ -49,6 +48,8 @@
      </form>
    </div>
 </nav>
+
+
 <div class="container-xl">
 	<div class="table-responsive">
 		<div class="table-wrapper">
@@ -83,24 +84,81 @@
                         <td style=" word-break: break-all;width: 30%;"> <?php echo $data['descr']?></td>
                         <td><img src=<?php echo $data['lien']?> width="100%" height="200"></td>
                         <td style="width: 10%;" >
-							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+							<a href="#editEmployeeModal<?php echo $data['id']?>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal<?php echo $data['id']?>" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 						</td>
 					</tr>
-                    <?php
-                    }
-                    $articles->closeCursor();
-                    ?>
-				</tbody>
-			</table>
+					<!-- Delete Modal HTML -->
+					<div id="deleteEmployeeModal<?php echo $data['id']?>" class="modal fade">
+						<div class="modal-dialog">
+						<div class="modal-content">
+						<form>
+							<div class="modal-header">						
+								<h4 class="modal-title">Delete Employee</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							</div>
+						<div class="modal-body">					
+							<p>Are you sure you want to delete these Records?</p>
+							<p class="text-warning"><small>This action cannot be undone.</small></p>
+						</div>
+						<div class="modal-footer">
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+							<a href="<?php echo"Articledelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+						</div>
+				</form>
+			</div>
 		</div>
+	</div>
+	<!-- Edit Modal HTML -->
+<div id="editEmployeeModal<?php echo $data['id']?>" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		<form  method="POST" action="Articleupdate" enctype="multipart/form-data">>
+				<div class="modal-header">						
+					<h4 class="modal-title">Modifier Article</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">					
+					<div class="form-group">
+					<input hidden type="text" class="form-control" name="id" required value="<?php echo $data['id']?>">
+						<label>titre</label>
+						<input type="text" class="form-control" name="titre" required value="<?php echo $data['titre']?>">
+					</div>
+					<div class="form-group">
+						<label>Description</label>
+						<textarea class="form-control" name="descr" required ><?php echo $data['descr']?></textarea>
+					</div>
+					<div class="form-group">
+						<label>type</label>
+						<input type="text" name="type" class="form-control" value="<?php echo $data['type']?>" required>
+					</div>		
+                    <div class="form-group">
+						<label>image</label>
+						<input type="file" name="image" class="form-control" required>
+					</div>							
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+					<input  class="btn btn-success" type="submit" name="upload" value="modifier">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+        <?php
+          }
+        $articles->closeCursor();
+        ?>
+			</tbody>
+		</table>
+	</div>
 	</div>        
 </div>
-<!-- Edit Modal HTML -->
+<!-- add Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form  method="POST" action="" enctype="multipart/form-data">
+			<form  method="POST" action="addArticles" enctype="multipart/form-data">
 				<div class="modal-header">						
 					<h4 class="modal-title">Ajouter Article</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -131,63 +189,6 @@
 		</div>
 	</div>
 </div>
-<!-- Edit Modal HTML -->
-<div id="editEmployeeModal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<form>
-				<div class="modal-header">						
-					<h4 class="modal-title">Edit Employee</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">					
-					<div class="form-group">
-						<label>Name</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Email</label>
-						<input type="email" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Address</label>
-						<textarea class="form-control" required></textarea>
-					</div>
-					<div class="form-group">
-						<label>Phone</label>
-						<input type="text" class="form-control" required>
-					</div>					
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input type="submit" class="btn btn-info" value="Save">
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<!-- Delete Modal HTML -->
-<div id="deleteEmployeeModal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<form>
-				<div class="modal-header">						
-					<h4 class="modal-title">Delete Employee</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">					
-					<p>Are you sure you want to delete these Records?</p>
-					<p class="text-warning"><small>This action cannot be undone.</small></p>
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input type="submit" class="btn btn-danger" value="Delete">
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-
 <footer>
     <div class="footer">
         <ul>
