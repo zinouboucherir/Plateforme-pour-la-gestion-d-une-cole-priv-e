@@ -8,7 +8,9 @@ use app\controllers\AuthController;
 use app\controllers\ShowArticleController;
 use app\controllers\AdminPresentationController;
 use app\controllers\PresentationController;
-
+use app\controllers\PrimaireController;
+use app\controllers\SecondaireController;
+use app\controllers\MoyenController;
 
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
@@ -34,6 +36,11 @@ $app->router->post('/addPresentation',[AdminPresentationController::class,'addPr
 $app->router->get('/presentationdelete',[AdminPresentationController::class,'supprimerPresentation']); 
 $app->router->post('/presentationupdate',[AdminPresentationController::class,'editPresentation']); 
 $app->router->get('/presentation',[PresentationController::class,'index']);
+
+$app->router->get('/primaire',[PrimaireController::class,'index']);
+$app->router->get('/moyen',[MoyenController::class,'index']);
+$app->router->get('/secondaire',[SecondaireController::class,'index']);
+
 // HOME PAGE :: /home
 $app->router->get('/contact',[ContactController::class , 'index']);  // CoONTACT PAGE :: /contact
 $app->router->post('/contact',[ContactController::class, 'post']);
