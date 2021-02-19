@@ -25,7 +25,7 @@
                  <div class="card-body">
                      <h5 class="card-title">Emplois du temps</h5>
                      <p class="card-text">Consulter les emplois du temps globale du cycle primaire. </p>
-                     <center><a href="" class="btn btn-info text-center">Consulter</a></center>
+                     <center><a href="emploiPrimaire" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
     </div>
 </div>
 
-
+<br/><br/>
 <?php include('footer.html')?>
 <script src="JS/jquery.js"></script>
  <script src="JS/bootstrap.js"></script>

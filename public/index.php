@@ -12,7 +12,7 @@ use app\controllers\PrimaireController;
 use app\controllers\SecondaireController;
 use app\controllers\MoyenController;
 use app\controllers\AdminEmploiController;
-
+use app\controllers\EmploiController;
 
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
@@ -48,6 +48,10 @@ $app->router->post('/addEmploi',[AdminEmploiController::class,'addEmploi']);
 $app->router->get('/emploidelete',[AdminEmploiController::class,'supprimerEmploi']); 
 $app->router->post('/emploiupdate',[AdminEmploiController::class,'editEmploi']); 
 
+
+$app->router->get('/emploiPrimaire',[EmploiController::class,'getPrimaireEmploi']);
+$app->router->get('/emploiMoyen',[EmploiController::class,'getMoyenEmploi']); 
+$app->router->get('/emploiSecondaire',[EmploiController::class,'getSecondaireEmploi']); 
 // HOME PAGE :: /home
 $app->router->get('/contact',[ContactController::class , 'index']);  // CoONTACT PAGE :: /contact
 $app->router->post('/contact',[ContactController::class, 'post']);

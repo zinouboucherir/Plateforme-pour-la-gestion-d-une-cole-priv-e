@@ -55,7 +55,9 @@
     </div>
 </div>
 <section>
+<br/>
     <center><h1 style="color:#052A4E;">Contact</h1></center>
+    <br/>
     <div id="contact" class="card text-center">
         <div class="card-body" >
             <h5 class="text-light"><i class="fa fa-map-marker text-light"></i> Didouche mourade Constantine</h5>

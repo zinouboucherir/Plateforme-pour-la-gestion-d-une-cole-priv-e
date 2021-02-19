@@ -24,8 +24,8 @@
                 <img src="https://d3timt52sxdbq0.cloudfront.net/wp-content/uploads/2016/12/calendrierprojet.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Emplois du temps</h5>
-                     <p class="card-text">Consulter les emplois du temps globale du cycle primaire. </p>
-                     <center><a href="" class="btn btn-info text-center">Consulter</a></center>
+                     <p class="card-text">Consulter les emplois du temps globale du cycle secondaire. </p>
+                     <center><a href="emploiSecondaire" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
@@ -88,6 +88,7 @@
         ?>
     </div>
 </div>
+<br/><br/>
 
 
 <?php include('footer.html')?>

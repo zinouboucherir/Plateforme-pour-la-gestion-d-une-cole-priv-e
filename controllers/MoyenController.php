@@ -10,6 +10,6 @@ class MoyenController extends Controller {
             'articles' => $articles,
         ];
 
-        $this->render('primaire',$params);
+        $this->render('moyen',$params);
     }
 }

@@ -10,6 +10,6 @@ class SecondaireController extends Controller {
             'articles' => $articles,
         ];
 
-        $this->render('primaire',$params);
+        $this->render('secondaire',$params);
     }
 }
