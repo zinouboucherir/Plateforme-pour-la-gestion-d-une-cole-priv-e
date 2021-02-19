@@ -35,7 +35,7 @@
                  <div class="card-body">
                      <h5 class="card-title">Enseignants </h5>
                      <p class="card-text">Consulter la liste des enseignant et leur heure de réception. </p>
-                     <center><a href="" class="btn btn-info text-center">Consulter</a></center>
+                     <center><a href="restauration" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@
                  <div class="card-body">
                      <h5 class="card-title">Restauration</h5>
                      <p class="card-text">vous pouvez consulter tout ce qui concerne la resaturation. </p>
-                     <center><a href="" class="btn btn-info text-center">Consulter</a></center>
+                     <center><a href="restauration" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>

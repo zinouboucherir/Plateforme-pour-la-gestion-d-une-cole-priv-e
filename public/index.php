@@ -13,7 +13,8 @@ use app\controllers\SecondaireController;
 use app\controllers\MoyenController;
 use app\controllers\AdminEmploiController;
 use app\controllers\EmploiController;
-
+use app\controllers\AdminRestauController;
+use app\controllers\RestauController;
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
 
@@ -48,6 +49,12 @@ $app->router->post('/addEmploi',[AdminEmploiController::class,'addEmploi']);
 $app->router->get('/emploidelete',[AdminEmploiController::class,'supprimerEmploi']); 
 $app->router->post('/emploiupdate',[AdminEmploiController::class,'editEmploi']); 
 
+
+$app->router->get('/adminRestau',[AdminRestauController::class,'index']);
+$app->router->post('/addRestau',[AdminRestauController::class,'addRestau']);
+$app->router->get('/restaudelete',[AdminRestauController::class,'supprimerRestau']); 
+$app->router->post('/restauupdate',[AdminRestauController::class,'editRestau']); 
+$app->router->get('/restauration',[RestauController::class,'index']);
 
 $app->router->get('/emploiPrimaire',[EmploiController::class,'getPrimaireEmploi']);
 $app->router->get('/emploiMoyen',[EmploiController::class,'getMoyenEmploi']); 

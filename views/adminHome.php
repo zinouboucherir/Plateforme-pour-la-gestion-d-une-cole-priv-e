@@ -49,7 +49,7 @@
             <div class="card" style="width:18rem; height:300px ;background-image:url('https://foodiesconsulting.com/wp-content/uploads/differentes-formes-de-restauration-1200x780.jpg');background-size: cover;">
                  <div class="card-body">
                  </br></br></br></br></br></br>
-                     <center><a href="" class="btn btn-info text-center">Gérer la restauration</a></center>
+                     <center><a href="adminRestau" class="btn btn-info text-center">Gérer la restauration</a></center>
                 </div>
             </div>
         </div>
