@@ -11,6 +11,8 @@ use app\controllers\PresentationController;
 use app\controllers\PrimaireController;
 use app\controllers\SecondaireController;
 use app\controllers\MoyenController;
+use app\controllers\AdminEmploiController;
+
 
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
@@ -40,6 +42,11 @@ $app->router->get('/presentation',[PresentationController::class,'index']);
 $app->router->get('/primaire',[PrimaireController::class,'index']);
 $app->router->get('/moyen',[MoyenController::class,'index']);
 $app->router->get('/secondaire',[SecondaireController::class,'index']);
+
+$app->router->get('/adminEmploi',[AdminEmploiController::class,'index']);
+$app->router->post('/addEmploi',[AdminEmploiController::class,'addEmploi']);
+$app->router->get('/emploidelete',[AdminEmploiController::class,'supprimerEmploi']); 
+$app->router->post('/emploiupdate',[AdminEmploiController::class,'editEmploi']); 
 
 // HOME PAGE :: /home
 $app->router->get('/contact',[ContactController::class , 'index']);  // CoONTACT PAGE :: /contact

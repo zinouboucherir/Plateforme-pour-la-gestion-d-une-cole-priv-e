@@ -98,8 +98,15 @@
 					</div>
 					<div class="form-group">
 						<label>type</label>
-						<input type="text" name="type" class="form-control" value="<?php echo $data['type']?>" required>
-					</div>		
+						<select name="type" type="text" name="type" class="form-control">
+		  					<option value="tout">tout</option>
+							<option value="enseignant">enseignant</option>
+							<option value="primaire">primaire</option>
+							<option value="moyen">moyen</option>
+							<option value="secondaire">secondaire</option>
+							<option value="parent">parent</option>
+						</select>
+					</div>				
                     <div class="form-group">
 						<label>image</label>
 						<input type="file" name="image" class="form-control" required>
@@ -142,7 +149,14 @@
 					</div>
 					<div class="form-group">
 						<label>type</label>
-						<input type="text" name="type" class="form-control" required>
+						<select name="type" type="text" name="type" class="form-control">
+		  					<option value="tout">tout</option>
+							<option value="enseignant">enseignant</option>
+							<option value="primaire">primaire</option>
+							<option value="moyen">moyen</option>
+							<option value="secondaire">secondaire</option>
+							<option value="parent">parent</option>
+						</select>
 					</div>		
                     <div class="form-group">
 						<label>image</label>
