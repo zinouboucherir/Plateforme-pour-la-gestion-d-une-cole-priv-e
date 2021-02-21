@@ -9,7 +9,7 @@ class EmploiDuTempsManager
         try
         {
     
-            $req=$db->query('SELECT * FROM emploidutemps WHERE '.$condition);
+            $req=$db->query('SELECT emploidutemps.*,classes.cycle,classes.numroClasse,classes.annee FROM `emploidutemps` join classes on emploidutemps.classe_id=classes.id where '.$condition);
             return $req;
         }
         catch (\Exception $e)
@@ -23,7 +23,7 @@ class EmploiDuTempsManager
         $db=DataBase::getInstance();
         try
         {
-            $sql = "INSERT INTO emploidutemps (jour,t1,t2,t3,t4,t5,t6,t7,t8,t9,cycle,classe) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO emploidutemps (jour,t1,t2,t3,t4,t5,t6,t7,t8,t9,cycle,classe_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
             $stmt= $db->prepare($sql);
             $stmt->execute([$jour,$t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9,$cycle,$classe]);
         }
@@ -47,14 +47,14 @@ class EmploiDuTempsManager
         }
      
     }
-    public function updateEmploi($id,$jour,$t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9,$cycle,$classe)
+    public function updateEmploi($id,$t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9)
     { 
         $db=DataBase::getInstance();
         try
         {
-            $sql = "UPDATE emploidutemps SET  jour=?,t1=?,t2=?,t3=?,t4=?,t5=?,t6=?,t7=?,t8=?,t9=?,cycle=?,classe=? WHERE id = ?;";
+            $sql = "UPDATE emploidutemps SET t1=?,t2=?,t3=?,t4=?,t5=?,t6=?,t7=?,t8=?,t9=? WHERE id = ?;";
             $stmt= $db->prepare($sql);
-            $stmt->execute([$jour,$t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9,$cycle,$classe,$id]);
+            $stmt->execute([$t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9,$id]);
         }
         catch (\Exception $e)
         { 

@@ -6,7 +6,7 @@ class EmploiController extends Controller {
 
     public function getPrimaireEmploi() {
         $emploiManager=new EmploiDuTempsManager();
-        $emplois =   $emploiManager->getEmploi("cycle='primaire'");
+        $emplois =   $emploiManager->getEmploi("classes.cycle='primaire'");
         $params = [
             'emplois' => $emplois,
         ];
@@ -14,7 +14,7 @@ class EmploiController extends Controller {
     }
     public function getMoyenEmploi() {
         $emploiManager=new EmploiDuTempsManager();
-        $emplois =   $emploiManager->getEmploi("cycle='moyen'");
+        $emplois =   $emploiManager->getEmploi("classes.cycle='moyen'");
         $params = [
             'emplois' => $emplois,
         ];
@@ -22,7 +22,7 @@ class EmploiController extends Controller {
     }
     public function getSecondaireEmploi() {
         $emploiManager=new EmploiDuTempsManager();
-        $emplois =   $emploiManager->getEmploi("cycle='secondaire'");
+        $emplois =   $emploiManager->getEmploi("classes.cycle='secondaire'");
         $params = [
             'emplois' => $emplois,
         ];

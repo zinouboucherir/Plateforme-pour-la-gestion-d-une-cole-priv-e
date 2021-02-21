@@ -57,7 +57,7 @@
                       {
                         ?>
                     <tr>
-                        <td style="width:15%;"><?php echo $data['classe']?></td>
+                        <td style="width:15%;"><?php echo $data['annee'].substr($data['cycle'],0,1).$data['numroClasse']?></td>
                         <td style="width:15%;"><?php echo $data['cycle']?></td>
                         <td style="width:15%;"><?php echo $data['jour']?></td>	
                         <td style="width:15%;"><?php echo $data['t1']?></td>
@@ -112,29 +112,9 @@
 				<div class="modal-body">					
 				<div class="form-group">
                 <input hidden type="text" class="form-control" name="id" required value="<?php echo $data['id']?>">
-                     <label>cycle</label>
-                     <select name="cycle" type="text" name="type" class="form-control">
-		  					<option value="primaire">primaire</option>
-							<option value="moyen">moyen</option>
-							<option value="secondaire">secondaire</option>
-				    </select>	
                     </div>
                 <div class="form-group">
-                <label>classe</label>
-						<input type="text" class="form-control" name="classe" required value="<?php echo $data['classe']?>">				
-                </div>
-					<div class="form-group">
-						<label>jour</label>
-						<select name="jour" type="text" name="type" class="form-control">
-		  					<option value="dimanche">dimanche</option>
-							<option value="lundi">lundi</option>
-							<option value="mardi">mardi</option>
-							<option value="mercredi">mercredi</option>
-							<option value="jeudi">jeudi</option>
-							<option value="vendredi">vendredi</option>
-                            <option value="samedi">samedi</option>
-				    </select>
-					</div>		
+                </div>	
                     <div class="form-group">
                      <label>8-9</label>
 						<input type="text" class="form-control" name="t1" required value="<?php echo $data['t1']?>">				
@@ -206,7 +186,14 @@
                     </div>
                 <div class="form-group">
                 <label>classe</label>
-						<input type="text" class="form-control" name="classe" required >				
+						<select name="classe" required class="form-control">
+                    <?php 
+                        while ($row = $cl->fetch())
+                            {
+                            echo "<option value=\"".$row['id']."\">" . $row['annee'].substr($row['cycle'],0,1).$row['numroClasse'] . "</option>";
+                            }
+                    ?>
+                </select>				
                 </div>
         
 					<div class="form-group">

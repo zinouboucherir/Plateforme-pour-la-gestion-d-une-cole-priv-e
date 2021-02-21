@@ -51,7 +51,7 @@
                       {
                         ?>
                     <tr>
-                        <td style="width:15%;"><?php echo $data['classe']?></td>
+                        <td style="width:15%;"><?php echo $data['annee'].substr($data['cycle'],0,1).$data['numroClasse']?></td>
                         <td style="width:15%;"><?php echo $data['cycle']?></td>
                         <td style="width:15%;"><?php echo $data['jour']?></td>	
                         <td style="width:15%;"><?php echo $data['t1']?></td>
