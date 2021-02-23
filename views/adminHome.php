@@ -18,6 +18,7 @@
 <body>
 <?php include('adminMenu.php') ?>
 <br/>
+<h1 id="schoolname" style="color:cadetblue" class="text-center">Binevenu <?php echo $_SESSION['User'];?></h1>
 <br/>
 <div class="container">
     <div class="row">

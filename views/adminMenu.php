@@ -5,6 +5,9 @@
    </button>
    <div class="collapse navbar-collapse" id="navbarText">
      <ul class="navbar-nav mr-auto">
+     <li class="nav-item">
+           <a href="logout"class="nav-link text-light"><i class="fa fa-sign-out"></i>déconnecter</a>
+       </li>
        <li class="nav-item">
            <a href="admin"class="nav-link text-light"><i class="fa fa-home"></i>Accueil</a>
        </li>

@@ -6,6 +6,12 @@ use app\models\PresentationManager;
 class AdminPresentationController extends Controller {
 
     public function index() {
+        session_start();
+        if(!isset($_SESSION['User']))
+        {
+            header('location:login');
+            exit();
+        }
         $presentationManager=new PresentationManager();
         $presentations = $presentationManager->getPresentations();
         $params = [
@@ -16,6 +22,12 @@ class AdminPresentationController extends Controller {
 
     public function addPresentation(Request $request)
     {
+        session_start();
+        if(!isset($_SESSION['User']))
+        {
+            header('location:login');
+            exit();
+        }
         $data=$request->all();
         $filename = $_FILES["image"]["name"]; 
         $tempname = $_FILES["image"]["tmp_name"];     
@@ -34,6 +46,12 @@ class AdminPresentationController extends Controller {
         $this->render('adminPresentation');
     }
     public function supprimerPresentation() {
+        session_start();
+        if(!isset($_SESSION['User']))
+        {
+            header('location:login');
+            exit();
+        }
         $id=$_GET['id'];
         $presentationManager=new PresentationManager();
         $presentationManager->deletePresenation($id);
@@ -45,7 +63,12 @@ class AdminPresentationController extends Controller {
     }
 
     public function editPresentation(Request $request)
-    {        
+    {     session_start();
+        if(!isset($_SESSION['User']))
+        {
+            header('location:login');
+            exit();
+        }     
         $data=$request->all();
         $presentationManager=new PresentationManager();
         $filename = $_FILES["image"]["name"]; 

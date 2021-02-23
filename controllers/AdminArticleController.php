@@ -6,6 +6,12 @@ use app\models\ArticleManager;
 class AdminArticleController extends Controller {
 
     public function index() {
+        session_start();
+        if(!isset($_SESSION['User']))
+        {
+            header('location:login');
+            exit();
+        }
         $articleManager=new ArticleManager();
         $articles = $articleManager->getArticles();
         $params = [
@@ -16,6 +22,12 @@ class AdminArticleController extends Controller {
 
     public function addArticles(Request $request)
     {
+        session_start();
+        if(!isset($_SESSION['User']))
+        {
+            header('location:login');
+            exit();
+        }
         $data=$request->all();
         $filename = $_FILES["image"]["name"]; 
         $tempname = $_FILES["image"]["tmp_name"];     
@@ -34,6 +46,12 @@ class AdminArticleController extends Controller {
         $this->render('adminArticles');
     }
     public function supprimerArticle() {
+        session_start();
+        if(!isset($_SESSION['User']))
+        {
+            header('location:login');
+            exit();
+        }
         $id=$_GET['id'];
         $articleManager=new ArticleManager();
         $articleManager->deleteArticles($id);
@@ -45,7 +63,13 @@ class AdminArticleController extends Controller {
     }
 
     public function editArticles(Request $request)
-    {        
+    {   
+        session_start();
+        if(!isset($_SESSION['User']))
+        {
+            header('location:login');
+            exit();
+        }     
         $data=$request->all();
         $articleManager=new ArticleManager();
         $filename = $_FILES["image"]["name"]; 
