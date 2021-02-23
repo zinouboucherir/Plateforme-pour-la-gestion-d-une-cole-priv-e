@@ -33,4 +33,50 @@ class ClasseManager
           }
      
     }
+
+    public function insertClasse($annee,$numero,$cycle)
+    {
+        $db=DataBase::getInstance();
+        try
+        {
+            $sql = "INSERT INTO classes (annee,numroClasse,cycle) VALUES (?,?,?)";
+            $stmt= $db->prepare($sql);
+            $stmt->execute([$annee,$numero,$cycle]);
+        }
+        catch (\Exception $e)
+        { 
+           return $e;
+        }
+    }
+
+    public function deleteClasse($id)
+    { 
+        $db=DataBase::getInstance();
+        try
+        {
+            $sql = "DELETE FROM classes WHERE id = ?";
+            $stmt= $db->prepare($sql);
+            $stmt->execute([$id]);
+        }
+        catch (\Exception $e)
+        { 
+           return $e;
+        }
+     
+    }
+    public function updateClasse($id,$annee,$numero,$cycle)
+    { 
+        $db=DataBase::getInstance();
+        try
+        {
+            $sql = "UPDATE classes SET annee=?,numroClasse=?,cycle=? WHERE id = ?;";
+            $stmt= $db->prepare($sql);
+            $stmt->execute([$annee,$numero,$cycle,$id]);
+        }
+        catch (\Exception $e)
+        { 
+           return $e;
+        }
+     
+    }
 }

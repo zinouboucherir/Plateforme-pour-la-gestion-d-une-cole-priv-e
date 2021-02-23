@@ -19,6 +19,8 @@ use app\controllers\AuthEleveController;
 use app\controllers\EleveController;
 use app\controllers\AuthParentController;
 use app\controllers\ParentController;
+use app\controllers\AdminUsersController;
+use app\controllers\AdminClassesController;
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
 
@@ -37,6 +39,13 @@ $app->router->get('/home',[HomeController::class,'index']);
 $app->router->get('/showarticle',[ShowArticleController::class,'ShowArticle']); 
 $app->router->get('/Articledelete',[AdminArticleController::class,'supprimerArticle']); 
 $app->router->post('/Articleupdate',[AdminArticleController::class,'editArticles']);
+$app->router->get('/adminUsers',[AdminUsersController::class,'index']);
+
+$app->router->get('/adminClasse',[AdminClassesController::class,'index']);
+$app->router->post('/addClasse',[AdminClassesController::class,'addClasse']);
+$app->router->get('/classedelete',[AdminClassesController::class,'supprimerClasse']); 
+$app->router->post('/classeupdate',[AdminClassesController::class,'editClasse']); 
+
 
 $app->router->get('/adminPresentation',[AdminPresentationController::class,'index']);
 $app->router->post('/addPresentation',[AdminPresentationController::class,'addPresentation']);
