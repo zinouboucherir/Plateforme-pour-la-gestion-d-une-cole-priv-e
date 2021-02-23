@@ -15,6 +15,8 @@ use app\controllers\AdminEmploiController;
 use app\controllers\EmploiController;
 use app\controllers\AdminRestauController;
 use app\controllers\RestauController;
+use app\controllers\AuthEleveController;
+use app\controllers\EleveController;
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
 
@@ -67,6 +69,15 @@ $app->router->post('/login',[AuthController::class,'connect']);
 $app->router->get('/logout',[AuthController::class,'disconnect']);
 $app->router->get('/register',[AuthController::class, 'register']);
 $app->router->post('/register',[AuthController::class, 'register']);
+
+
+$app->router->get('/elevelogin',[AuthEleveController::class,'login']);
+$app->router->post('/elevelogin',[AuthEleveController::class,'connect']);
+$app->router->get('/elevelogout',[AuthEleveController::class,'disconnect']);
+$app->router->get('/eleve',[EleveController::class,'index']);
+
+$app->router->get('/emploiEleve',[EleveController::class,'getEleveEmploi']);
+$app->router->get('/eleveinfos',[EleveController::class,'infoseleve']);
 
 
 // end Routes

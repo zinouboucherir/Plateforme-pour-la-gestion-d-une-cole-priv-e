@@ -17,5 +17,18 @@ class UserManager
           }
      
     }
-
+    public function getAllInfos($id)
+    { 
+        $db=DataBase::getInstance();
+        try
+        {   $requete=$db->prepare("SELECT users.* FROM utilisateurs join users on users.id =utilisateurs.id where users.id=?");
+            $requete->execute([$id]);
+            return $requete;
+        }
+        catch (\Exception $e)
+          { 
+             return $e;
+          }
+     
+    }
 }

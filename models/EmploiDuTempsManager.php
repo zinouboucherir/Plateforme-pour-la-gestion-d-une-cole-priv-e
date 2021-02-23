@@ -18,6 +18,21 @@ class EmploiDuTempsManager
           }
      
     }
+    public function getEleveEmploi($id)
+    { 
+        $db=DataBase::getInstance();
+        try
+        {
+            $req=$db->prepare('SELECT emploidutemps.*,classes.cycle,classes.numroClasse,classes.annee FROM `emploidutemps` join (SELECT classes.* from classes join elevclasse on elevclasse.classe_id=classes.id where elevclasse.id= ?) as classes on emploidutemps.classe_id=classes.id');
+            $req->execute([intval($id)]);
+            return $req;
+        }
+        catch (\Exception $e)
+          { 
+             return $e;
+          }
+     
+    }
     public function insertEmploi($jour,$t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9,$cycle,$classe)
     {
         $db=DataBase::getInstance();
