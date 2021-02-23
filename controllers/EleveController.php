@@ -47,4 +47,19 @@ class EleveController extends Controller {
         ];
             $this->render('eleveinfos',$params);
         }
+        public function noteEleve() {
+            session_start();
+            if(!isset($_SESSION['Eleve']))
+            {
+                header('location:elevelogin');
+                exit();
+            }
+            $eleveManager=new EleveManager();
+            $notes = $eleveManager->getNotes($_SESSION['Eleve']);
+            
+            $params = [
+                'notes' => $notes,
+            ];
+                $this->render('elevenote',$params);
+            }
 }

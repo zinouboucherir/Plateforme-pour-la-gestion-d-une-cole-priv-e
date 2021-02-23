@@ -16,4 +16,17 @@ class EleveManager
              return $e;
           }
     }
+    public function getNotes($id)
+    { 
+        $db=DataBase::getInstance();
+        try
+        {   $requete=$db->prepare("SELECT * FROM notes where eleve_id=?");
+            $requete->execute([$id]);
+            return $requete;
+        }
+        catch (\Exception $e)
+          { 
+             return $e;
+          }
+    }
 }

@@ -17,6 +17,8 @@ use app\controllers\AdminRestauController;
 use app\controllers\RestauController;
 use app\controllers\AuthEleveController;
 use app\controllers\EleveController;
+use app\controllers\AuthParentController;
+use app\controllers\ParentController;
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
 
@@ -78,8 +80,16 @@ $app->router->get('/eleve',[EleveController::class,'index']);
 
 $app->router->get('/emploiEleve',[EleveController::class,'getEleveEmploi']);
 $app->router->get('/eleveinfos',[EleveController::class,'infoseleve']);
+$app->router->get('/elevenote',[EleveController::class,'noteEleve']);
 
+$app->router->get('/parentlogin',[AuthParentController::class,'login']);
+$app->router->post('/parentlogin',[AuthParentController::class,'connect']);
+$app->router->get('/parentlogout',[AuthParentController::class,'disconnect']);
+$app->router->get('/parent',[ParentController::class,'index']);
 
+$app->router->get('/parentinfos',[ParentController::class,'infosparent']);
+$app->router->get('/emploiParent',[ParentController::class,'getParentEmploi']);
+$app->router->get('/parentnote',[ParentController::class,'noteParent']);
 // end Routes
 
 

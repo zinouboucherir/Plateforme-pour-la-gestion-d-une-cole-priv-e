@@ -33,6 +33,21 @@ class EmploiDuTempsManager
           }
      
     }
+    public function getParentEmploi($id)
+    { 
+        $db=DataBase::getInstance();
+        try
+        {
+            $req=$db->prepare('SELECT emploidutemps.*,classes.*,users.nom,users.prenom FROM parenteleve JOIN elevclasse JOIN emploidutemps JOIN users JOIN classes on parenteleve.id=elevclasse.id AND emploidutemps.classe_id=elevclasse.classe_id AND users.id=elevclasse.id AND classes.id=elevclasse.classe_id  WHERE parenteleve.parent_id=?');
+            $req->execute([intval($id)]);
+            return $req;
+        }
+        catch (\Exception $e)
+          { 
+             return $e;
+          }
+     
+    }
     public function insertEmploi($jour,$t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9,$cycle,$classe)
     {
         $db=DataBase::getInstance();

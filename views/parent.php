@@ -21,7 +21,7 @@
    <div class="collapse navbar-collapse" id="navbarText">
      <ul class="navbar-nav mr-auto">
      <li class="nav-item">
-     <a href="elevelogout"class="nav-link text-light"><i class="fa fa-sign-out"></i> déconnecter</a>
+     <a href="parentlogout"class="nav-link text-light"><i class="fa fa-sign-out"></i> déconnecter</a>
        </li>
        <li class="nav-item">
            <a href="eleve"class="nav-link text-light"><i class="fa fa-home"></i> Accueil</a>
@@ -55,8 +55,8 @@
                 <img src="https://d3timt52sxdbq0.cloudfront.net/wp-content/uploads/2016/12/calendrierprojet.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Emplois du temps</h5>
-                     <p class="card-text">Consulter votre emploi du temps scolaire. </p>
-                     <center><a href="emploiEleve"class="btn btn-info text-center">Consulter</a></center>
+                     <p class="card-text">Consulter les emplois du temps de vos enfants. </p>
+                     <center><a href="emploiParent"class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
                  <div class="card-body">
                      <h5 class="card-title">Inforamtion personnelles</h5>
                      <p class="card-text">Consulter vos information personnelles. </p>
-                     <center><a href="eleveinfos" class="btn btn-info text-center">Consulter</a></center>
+                     <center><a href="parentinfos" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
@@ -75,8 +75,8 @@
                 <img src="https://www.ucl.ac.uk/teaching-learning/sites/teaching-learning/files/migrated-images/feedback-grade_1.jpeg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Notes</h5>
-                     <p class="card-text">Consulter vos notes dans les différentes matiéres  </p>
-                     <center><a href="elevenote" class="btn btn-info text-center">Consulter</a></center>
+                     <p class="card-text">Consulter les notes de vos enfants et les reamrques des enseignants  </p>
+                     <center><a href="parentnote" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
@@ -85,14 +85,14 @@
                 <img src="https://appt.asso.fr/wp-content/uploads/2017/10/tempsdactivitesperiscolaires-870x432.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Activitées Extrascolaires</h5>
-                     <p class="card-text">Consulter vos activitées extrascolaires</p>
+                     <p class="card-text">Consulter les activitées extrascolaires de vos enfants</p>
                      <center><a href="restauration" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</body>
-<BR></BR>
+<br>
 <?php include('footer.html')?>
+</body>
 </html>

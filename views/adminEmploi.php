@@ -34,7 +34,7 @@
 				</div>
 			</div>
 			<input type="text" id="myInput" onkeyup="myFunction3()" placeholder="rechercher..">
-			<table class="table table-striped table-wrapper-scroll-y my-custom-" id="myTable" >
+			<table class="table table-hover table-bordered table-striped" id="myTable" >
 				<thead>
 					<tr>
                       <th>classe</th>

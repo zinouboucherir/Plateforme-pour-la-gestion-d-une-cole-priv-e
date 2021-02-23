@@ -52,8 +52,8 @@
 					</div>
 				</div>
 			</div>
-
-        <table class="table table-hover table-bordered" style="width:50%; margin-left: 25%; margin-right: 25%;">
+<br> <br>
+        <table class="table table-hover table-bordered table-striped" style="width:100%;">
   <tbody>
   <?php
                     $data=$infos->fetch();
@@ -61,7 +61,7 @@
                         ?>
                     <tr> 
                         <th>Classe</th>
-                        <td style="width:15%;"><?php echo $data['annee'].substr($data['cycle'],0,1).$data['numroClasse']?></td>
+                        <td style="width:30%;"><?php echo $data['annee'].substr($data['cycle'],0,1).$data['numroClasse']?></td>
                     </tr> 
                     <tr> 
                         <th>Cycle</th>
@@ -100,6 +100,7 @@
         </div>
     </div>
 </div>
-        <br/><br/>
+<br>
+<?php include('footer.html')?>
 </body>
 </html>

@@ -56,7 +56,7 @@ class AuthEleveController extends Controller {
     }
     public function disconnect(){
         session_start();
-        session_destroy();
+        unset($_SESSION["Eleve"]);
         $this->render('elevelogin');
     }
 }

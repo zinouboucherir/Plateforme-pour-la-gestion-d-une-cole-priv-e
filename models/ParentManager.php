@@ -1,27 +1,13 @@
 <?php
 namespace app\models;
 require_once('DataBase.php');
-class UserManager
+class ParentManager
 {
-    public function getUser($username,$pswd,$type)
+    public function getParentInfos($id)
     { 
         $db=DataBase::getInstance();
         try
-        {   $requete=$db->prepare("SELECT * FROM utilisateurs WHERE login = ? and password = ? and type = ?");
-            $requete->execute([$username,md5($pswd),$type]);
-            return $requete;
-        }
-        catch (\Exception $e)
-          { 
-             return $e;
-          }
-     
-    }
-    public function getAllInfos($id)
-    { 
-        $db=DataBase::getInstance();
-        try
-        {   $requete=$db->prepare("SELECT users.* FROM utilisateurs join users on users.id =utilisateurs.id where users.id=?");
+        {   $requete=$db->prepare("SELECT * FROM users join utilisateurs  on users.id = utilisateurs.id  where users.id=?");
             $requete->execute([$id]);
             return $requete;
         }
@@ -29,6 +15,18 @@ class UserManager
           { 
              return $e;
           }
-
+    }
+    public function getNotes($id)
+    { 
+        $db=DataBase::getInstance();
+        try
+        {   $requete=$db->prepare("SELECT * FROM parenteleve join notes JOIN users on parenteleve.id=notes.eleve_id AND users.id=parenteleve.id WHERE parenteleve.parent_id=?");
+            $requete->execute([$id]);
+            return $requete;
+        }
+        catch (\Exception $e)
+          { 
+             return $e;
+          }
     }
 }
