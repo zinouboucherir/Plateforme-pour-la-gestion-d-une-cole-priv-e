@@ -49,7 +49,7 @@ class EleveManager
         $db=DataBase::getInstance();
         try
         {
-            $req=$db->query('SELECT utilisateurs.*,users.*,elevclasse.*,classes.annee,classes.numroClasse,classes.cycle FROM utilisateurs JOIN users JOIN elevclasse JOIN classes on utilisateurs.id=users.id AND users.id=elevclasse.id and elevclasse.classe_id=classes.id WHERE utilisateurs.type=2');
+            $req=$db->query('SELECT utilisateurs.*,users.*,elevclasse.*,classes.annee,classes.numroClasse,classes.cycle FROM utilisateurs JOIN users  JOIN elevclasse JOIN classes on utilisateurs.id=users.id AND users.id=elevclasse.id and elevclasse.classe_id=classes.id WHERE utilisateurs.type=2');
             return $req;
         }
         catch (\Exception $e)

@@ -22,6 +22,8 @@ use app\controllers\ParentController;
 use app\controllers\AdminUsersController;
 use app\controllers\AdminClassesController;
 use app\controllers\AdminEleveController;
+use app\controllers\AdminParentController;
+use app\controllers\AdminEnfantController;
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
 
@@ -52,6 +54,17 @@ $app->router->get('/adminEleve',[AdminEleveController::class,'index']);
 $app->router->post('/addEleve',[AdminEleveController::class,'addEleve']);
 $app->router->get('/elevedelete',[AdminEleveController::class,'supprimerEleve']); 
 $app->router->post('/eleveupdate',[AdminEleveController::class,'editEleve']); 
+
+
+$app->router->get('/adminParent',[AdminParentController::class,'index']);
+$app->router->post('/addParent',[AdminParentController::class,'addParent']);
+$app->router->get('/parentdelete',[AdminParentController::class,'supprimerParent']); 
+$app->router->post('/parentupdate',[AdminParentController::class,'editParent']); 
+
+$app->router->get('/adminEnfant',[AdminEnfantController::class,'index']);
+$app->router->post('/addEnfant',[AdminEnfantController::class,'addEnfant']);
+$app->router->get('/enfantdelete',[AdminEnfantController::class,'supprimerEnfant']); 
+
 
 
 

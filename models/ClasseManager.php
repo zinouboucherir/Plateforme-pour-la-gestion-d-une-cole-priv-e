@@ -9,7 +9,7 @@ class ClasseManager
         try
         {
     
-            $req=$db->query('SELECT * FROM classes');
+            $req=$db->query('SELECT * FROM classes WHERE id>1');
             return $req;
         }
         catch (\Exception $e)
@@ -54,6 +54,10 @@ class ClasseManager
         $db=DataBase::getInstance();
         try
         {
+            $sql1="UPDATE elevclasse SET classe_id=? WHERE classe_id = ?";
+            $stmt1= $db->prepare($sql1);
+            $stmt1->execute([1,$id]);
+
             $sql = "DELETE FROM classes WHERE id = ?";
             $stmt= $db->prepare($sql);
             $stmt->execute([$id]);

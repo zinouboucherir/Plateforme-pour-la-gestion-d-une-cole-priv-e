@@ -43,7 +43,7 @@
         <div class="card" style="width:18rem; height:300px;background-image:url('https://www.ymag.fr/sites/default/files/styles/image_droite_biseau/public/clubs-utilisateurs.png?itok=av5n4Lna');background-size: cover;">
                  <div class="card-body">
                  </br></br></br></br></br></br>
-                     <center><a href="adminUsers" class="btn btn-info text-center">Gérer les parents</a></center>
+                     <center><a href="adminParent" class="btn btn-info text-center">Gérer les parents</a></center>
                 </div>
             </div>
         </div>

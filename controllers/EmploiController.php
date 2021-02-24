@@ -28,12 +28,5 @@ class EmploiController extends Controller {
         ];
         $this->render('emploiSecondaire',$params);
     }
-    public function getEleveEmploi() {
-        $emploiManager=new EmploiDuTempsManager();
-        $emplois =   $emploiManager->getEleveEmploi($_SESSION['Eleve']);
-        $params = [
-            'emplois' => $emplois,
-        ];
-        $this->render('emploiEleve',$params);
-    }
+
 }
