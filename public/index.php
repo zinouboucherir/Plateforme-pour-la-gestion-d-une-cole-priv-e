@@ -25,6 +25,8 @@ use app\controllers\AdminEleveController;
 use app\controllers\AdminParentController;
 use app\controllers\AdminEnfantController;
 use app\controllers\AdminAdminController;
+use app\controllers\AdminContactController;
+use app\controllers\AdminEnsController;
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
 
@@ -62,6 +64,11 @@ $app->router->post('/addParent',[AdminParentController::class,'addParent']);
 $app->router->get('/parentdelete',[AdminParentController::class,'supprimerParent']); 
 $app->router->post('/parentupdate',[AdminParentController::class,'editParent']); 
 
+$app->router->get('/adminEns',[AdminEnsController::class,'index']);
+$app->router->post('/addEns',[AdminEnsController::class,'addEns']);
+$app->router->get('/ensdelete',[AdminEnsController::class,'supprimerEns']); 
+$app->router->post('/ensupdate',[AdminEnsController::class,'editEns']); 
+
 $app->router->get('/adminEnfant',[AdminEnfantController::class,'index']);
 $app->router->post('/addEnfant',[AdminEnfantController::class,'addEnfant']);
 $app->router->get('/enfantdelete',[AdminEnfantController::class,'supprimerEnfant']); 
@@ -70,8 +77,23 @@ $app->router->get('/enfantdelete',[AdminEnfantController::class,'supprimerEnfant
 $app->router->get('/adminAdmin',[AdminAdminController::class,'index']);
 $app->router->post('/addAdmin',[AdminAdminController::class,'addAdmin']);
 $app->router->get('/admindelete',[AdminAdminController::class,'supprimerAdmin']); 
-$app->router->post('/adminupdate',[AdminAdminController::class,'editAdmin']); 
+$app->router->post('/adminupdate',[AdminAdminController::class,'editAdmin']);
 
+$app->router->get('/adminContact',[AdminContactController::class,'index']);
+$app->router->post('/addTelephone',[AdminContactController::class,'addTelephone']);
+$app->router->get('/telephonedelete',[AdminContactController::class,'supprimerTelephone']); 
+$app->router->post('/telephoneupdate',[AdminContactController::class,'editTelephone']); 
+
+$app->router->post('/addFax',[AdminContactController::class,'addFax']);
+$app->router->get('/faxdelete',[AdminContactController::class,'supprimerFax']); 
+$app->router->post('/faxupdate',[AdminContactController::class,'editFax']); 
+
+$app->router->post('/addEmail',[AdminContactController::class,'addEmail']);
+$app->router->get('/emaildelete',[AdminContactController::class,'supprimerEmail']); 
+$app->router->post('/emailupdate',[AdminContactController::class,'editEmail']); 
+
+$app->router->get('/adressedelete',[AdminContactController::class,'supprimerAdresse']); 
+$app->router->post('/adresseupdate',[AdminContactController::class,'editAdresse']); 
 
 
 $app->router->get('/adminPresentation',[AdminPresentationController::class,'index']);

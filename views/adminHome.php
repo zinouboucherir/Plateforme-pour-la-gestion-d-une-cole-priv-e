@@ -73,7 +73,7 @@
             
                  <div class="card-body">
                  </br></br></br></br></br></br>
-                     <center><a href="" class="btn btn-info text-center">Gérer les enseignants</a></center>
+                     <center><a href="adminEns" class="btn btn-info text-center">Gérer les enseignants</a></center>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
             <div class="card" style="width:18rem; height:300px;background-image:url('https://img.freepik.com/photos-gratuite/contactez-nous_36325-2135.jpg?size=626&ext=jpg');background-size: cover;">
                  <div class="card-body">
                  </br></br></br></br></br></br>
-                     <center><a href="" class="btn btn-info text-center">Gérer les contacts</a></center>
+                     <center><a href="adminContact" class="btn btn-info text-center">Gérer les contacts</a></center>
                 </div>
             </div>
         </div>

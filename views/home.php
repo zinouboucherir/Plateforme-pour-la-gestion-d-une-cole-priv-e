@@ -56,17 +56,46 @@
 </div>
 <section>
 <br/>
+<?php 
+        $data=$adresse->fetch()
+        
+        ?>
     <center><h1 style="color:#052A4E;">Contact</h1></center>
     <br/>
     <div id="contact" class="card text-center">
         <div class="card-body" >
-            <h5 class="text-light"><i class="fa fa-map-marker text-light"></i> Didouche mourade Constantine</h5>
+            <h5 class="text-light"><i class="fa fa-map-marker text-light"> <?php echo $data['adresse']?></i></h5>
             <br/>
             <div class="row">
-                <div class="col-3"><h6 class="text-light"><i class="fa fa-at text-light" ></i> hm_boucherir@esi.dz</h6></div>
-                <div class="col-3"><h6 class="text-light"><i class="fa fa-phone text-light"></i> Téléphone1: 0542976708</h6></div>
-                <div class="col-3"><h6 class="text-light"><i class="fa fa-phone text-light"></i> Téléphone2: 0791970008</h6></div>
-                <div class="col-3"><h6 class="text-light"><i class="fa fa-fax text-light"></i> Fax:031089865</h6></div>
+            <?php 
+            while ($data=$emails->fetch())
+            {
+           ?>
+                <div class="col-3"><h6 class="text-light"><i class="fa fa-at text-light" ></i> <?php echo $data['email']?></h6></div>
+            <?php
+             }
+            $emails->closeCursor();
+            ?>
+             <?php 
+             $i=0;
+            while ($data=$telephones->fetch())
+            {
+                $i++;
+           ?>
+             <div class="col-3"><h6 class="text-light"><i class="fa fa-phone text-light"></i> <?php echo $data['numero']?></h6></div>
+            <?php
+             }
+            $telephones->closeCursor();
+            ?>
+             <?php 
+            while ($data=$faxs->fetch())
+            {
+           ?>
+                <div class="col-3"><h6 class="text-light"><i class="fa fa-fax text-light" ></i> <?php echo $data['fax']?></h6></div>
+            <?php
+             }
+            $faxs->closeCursor();
+            ?>
             </div>  
         </div>
     </div>
