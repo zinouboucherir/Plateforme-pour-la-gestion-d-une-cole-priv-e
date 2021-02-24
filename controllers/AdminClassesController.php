@@ -52,7 +52,7 @@ class AdminClassesController extends Controller {
         $params = [
             'classes'=> $classes,
         ];
-        header('location:adminClasse');
+        
         $this->render('adminClasse',$params);
     }
         public function editClasse()
