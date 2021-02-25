@@ -17,14 +17,14 @@ class EnsManager
           }
     }
 
-    public function insertEns($nom,$prenom,$matiere,$cycle)
+    public function insertEns($nom,$prenom,$matiere,$jour,$heure)
     {
         $db=DataBase::getInstance();
         try
         {
-            $sql = "INSERT INTO enseignant (nom,prenom,matiere,cycle) VALUES (?,?,?,?)";
+            $sql = "INSERT INTO enseignant (nom,prenom,matiere,jourRec,heureRec) VALUES (?,?,?,?,?)";
             $stmt= $db->prepare($sql);
-            $stmt->execute([$nom,$prenom,$matiere,$cycle]);
+            $stmt->execute([$nom,$prenom,$matiere,$jour,$heure]);
         }
         catch (\Exception $e)
         { 
@@ -48,20 +48,34 @@ class EnsManager
         }
      
     }
-    public function updateEns($id,$nom,$prenom,$matiere,$cycle)
+    public function updateEns($id,$nom,$prenom,$matiere,$jour,$heure)
     { 
         $db=DataBase::getInstance();
         try
         {
-            $sql = "UPDATE enseiGNANT SET nom=?,prenom=?,matiere=?,cycle=? WHERE id = ?;";
+            $sql = "UPDATE enseignant SET nom=?,prenom=?,matiere=?,jourRec=?,heureRec=?  WHERE id = ?;";
             $stmt= $db->prepare($sql);
-            $stmt->execute([$nom,$prenom,$matiere,$cycle,$id]);
+            $stmt->execute([$nom,$prenom,$matiere,$jour,$heure,$id]);
         }
         catch (\Exception $e)
         { 
            return $e;
         }
      
+    }
+
+    public function getEnsForCycle($condition='true')
+    { 
+        $db=DataBase::getInstance();
+        try
+        {
+            $req=$db->query('SELECT DISTINCT enseignant.* FROM enseignant join ensclasse join classes on enseignant.id=ensclasse.id_ens and ensclasse.id_classe=classes.id WHERE '.$condition);
+            return $req;
+        }
+        catch (\Exception $e)
+          { 
+             return $e;
+          }
     }
 
 }

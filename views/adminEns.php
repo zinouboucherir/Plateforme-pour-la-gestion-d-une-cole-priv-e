@@ -42,14 +42,28 @@
                     <label>Matiére</label>
 						<input type="texte" class="form-control" name="matiere" required >				
                     </div>
-                    <div class="form-group">	
-                    <label>Cycle</label>
-                     <select name="cycle" type="text" name="type" class="form-control">
-		  					<option value="primaire">primaire</option>
-							<option value="moyen">moyen</option>
-							<option value="secondaire">secondaire</option>
-				    </select>							
-				    </div>	
+                    <div class="form-group">
+						<label>jour de réception</label>
+						<select name="jour" type="text" name="type" class="form-control">
+		  					<option value="dimanche">dimanche</option>
+							<option value="lundi">lundi</option>
+							<option value="mardi">mardi</option>
+							<option value="mercredi">mercredi</option>
+							<option value="jeudi">jeudi</option>
+				    </select>
+					</div>
+                    <div class="form-group">
+						<label>Heure de réception</label>
+						<select name="heure" type="text" name="type" class="form-control">
+                        <option value="9H-10H">9H-10H</option>
+							<option value="10H-11H">10H-11H</option>
+							<option value="11H-12H">11H-12H</option>
+							<option value="12H-13H">12H-13H</option>
+							<option value="13H-14H">13H-14H</option>
+							<option value="14H-15H">14H-15H</option>
+                            <option value="15H-16H">15H-16H</option>
+				    </select>
+					</div>
                     </div>	
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -80,7 +94,8 @@
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Matiére</th>
-                        <th>Cycle</th>
+                        <th>joure de réception</th>
+                        <th>heure de réception</th>
                         <th>Classes</th>
 					</tr>
 				</thead>
@@ -93,7 +108,8 @@
                         <td style="width:15%;"><?php echo $data['nom']?></td>	
                         <td style="width:15%;"><?php echo $data['prenom']?></td>
                         <td style="width:15%;"><?php echo $data['matiere']?></td>
-                        <td style="width:15%;"><?php echo $data['cycle']?></td>	 
+                        <td style="width:15%;"><?php echo $data['jourRec']?></td>	
+                        <td style="width:15%;"><?php echo $data['heureRec']?></td> 
                         <td style="width:15%;"><a href="<?php echo"adminEnsClasse?id=".$data['id']?>" class="btn btn-warning text-center">Classes</a></td>	             
                         <td style="width: 10%;" >
 							<a href="#editEmployeeModal<?php echo $data['id']?>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -150,14 +166,29 @@
                     <label>Matiére</label>
 						<input type="texte" class="form-control" name="matiere" required value="<?php echo $data['matiere']?>">				
                     </div>
-                    <div class="form-group">	
-                    <label>Cycle</label>
-                     <select name="cycle" type="text" name="type" class="form-control">
-		  					<option value="primaire">primaire</option>
-							<option value="moyen">moyen</option>
-							<option value="secondaire">secondaire</option>
-				    </select>							
-				    </div>	
+                    <div class="form-group">
+						<label>jour de réception</label>
+						<select name="jour" type="text" name="type" class="form-control">
+		  					<option value="dimanche">dimanche</option>
+							<option value="lundi">lundi</option>
+							<option value="mardi">mardi</option>
+							<option value="mercredi">mercredi</option>
+							<option value="jeudi">jeudi</option>
+			
+				    </select>
+					</div>
+                    <div class="form-group">
+						<label>Heure de réception</label>
+						<select name="heure" type="text" name="type" class="form-control">
+		  					<option value="9H-10H">9H-10H</option>
+							<option value="10H-11H">10H-11H</option>
+							<option value="11H-12H">11H-12H</option>
+							<option value="12H-13H">12H-13H</option>
+							<option value="13H-14H">13H-14H</option>
+							<option value="14H-15H">14H-15H</option>
+                            <option value="15H-16H">15H-16H</option>
+				    </select>
+					</div>
 				    </div>							
 				</div>
 			</form>

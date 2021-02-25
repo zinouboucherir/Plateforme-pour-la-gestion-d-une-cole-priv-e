@@ -27,6 +27,8 @@ use app\controllers\AdminEnfantController;
 use app\controllers\AdminAdminController;
 use app\controllers\AdminContactController;
 use app\controllers\AdminEnsController;
+use app\controllers\AdminEnsClasseController;
+use app\controllers\EnsController;
 $ROOT_DIR = dirname(__DIR__);
 $STORAGE_DIR = dirname(__DIR__).'/storage/images/';
 
@@ -72,6 +74,10 @@ $app->router->post('/ensupdate',[AdminEnsController::class,'editEns']);
 $app->router->get('/adminEnfant',[AdminEnfantController::class,'index']);
 $app->router->post('/addEnfant',[AdminEnfantController::class,'addEnfant']);
 $app->router->get('/enfantdelete',[AdminEnfantController::class,'supprimerEnfant']); 
+
+$app->router->get('/adminEnsClasse',[AdminEnsClasseController::class,'index']);
+$app->router->post('/addEnsClasse',[AdminEnsClasseController::class,'addEnsClasse']);
+$app->router->get('/ensclassedelete',[AdminEnsClasseController::class,'supprimerEnsClasse']); 
 
 
 $app->router->get('/adminAdmin',[AdminAdminController::class,'index']);
@@ -121,6 +127,10 @@ $app->router->get('/restauration',[RestauController::class,'index']);
 $app->router->get('/emploiPrimaire',[EmploiController::class,'getPrimaireEmploi']);
 $app->router->get('/emploiMoyen',[EmploiController::class,'getMoyenEmploi']); 
 $app->router->get('/emploiSecondaire',[EmploiController::class,'getSecondaireEmploi']); 
+
+$app->router->get('/ensPrimaire',[EnsController::class,'getPrimaireEns']);
+$app->router->get('/ensMoyen',[EnsController::class,'getMoyenEns']); 
+$app->router->get('/ensSecondaire',[EnsController::class,'getSecondaireEns']); 
 // HOME PAGE :: /home
 $app->router->get('/contact',[ContactController::class , 'index']);  // CoONTACT PAGE :: /contact
 $app->router->post('/contact',[ContactController::class, 'post']);

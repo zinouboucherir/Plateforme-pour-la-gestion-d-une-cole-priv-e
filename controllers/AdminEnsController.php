@@ -28,7 +28,7 @@ class AdminEnsController extends Controller {
             exit();
         }
         $ensManager=new EnsManager();
-        $ensManager->insertEns($_POST['nom'],$_POST['prenom'],$_POST['matiere'],$_POST['cycle']);
+        $ensManager->insertEns($_POST['nom'],$_POST['prenom'],$_POST['matiere'],$_POST['jour'],$_POST['heure']);
         $ens =$ensManager->getEns();
         $params = [
             'ens' =>  $ens,
@@ -63,7 +63,7 @@ class AdminEnsController extends Controller {
                 exit();
             }
             $ensManager=new EnsManager();
-            $ensManager->updateEns($_POST['id'],$_POST['nom'],$_POST['prenom'],$_POST['matiere'],$_POST['cycle']);
+            $ensManager->updateEns($_POST['id'],$_POST['nom'],$_POST['prenom'],$_POST['matiere'],$_POST['jour'],$_POST['heure']);
             $ens =  $ensManager->getEns();
             $params = [
                 'ens' =>  $ens,
