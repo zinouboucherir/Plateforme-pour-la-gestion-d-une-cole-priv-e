@@ -42,7 +42,11 @@
      </form>
    </div>
 </nav>
-<div class="container-xl">
+<br>
+<section>
+  
+</section>
+<div class="jumbotron page" id="page1">
 	<div class="table-responsive">
 		<div class="table-wrapper">
 			<div class="table-title">
@@ -54,16 +58,16 @@
 			</div>
             <br>
             <table class="table table-hover table-bordered table-striped" style="width:100%;">
-  <tbody>
-  <thead>
-    <tr>
-      <th scope="col">Matiére</th>
-      <th scope="col">Controle continu</th>
-      <th scope="col">Note de devoir</th>
-      <th scope="col">Note d'examen</th>
-    </tr>
-  </thead>
-  <?php
+              <thead>
+                <tr>
+                  <th scope="col">Matiére</th>
+                  <th scope="col">Controle continu</th>
+                  <th scope="col">Note de devoir</th>
+                  <th scope="col">Note d'examen</th>
+                </tr>
+              </thead>
+               <tbody>
+              <?php
                     while ($data=$notes->fetch())
                       {
                         ?>
@@ -75,15 +79,16 @@
                     </tr> 
 
                     <?php
-          }
-        $notes->closeCursor();
-        ?>
-  </tbody>
-</table>
+                     }
+                   $notes->closeCursor();
+                ?>
+             </tbody>
+          </table>
 
         </div>
     </div>
 </div>
+                    </section>
 <br>
 <?php include('footer.html')?>
 </body>

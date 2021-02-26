@@ -42,7 +42,8 @@
      </form>
    </div>
 </nav>
-<div class="container-xl">
+<section>
+<div class="jumbotron page" id="page1">
 	<div class="table-responsive">
 		<div class="table-wrapper">
 			<div class="table-title">
@@ -100,7 +101,12 @@
         </div>
     </div>
 </div>
+</section>
+
 <br>
-<?php include('footer.html')?>
+<section>
+<?php include('footer.html')?>  
+</section>
+
 </body>
 </html>

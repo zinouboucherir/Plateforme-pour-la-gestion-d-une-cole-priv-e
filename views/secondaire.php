@@ -17,10 +17,11 @@
 <br/>
 <?php include('menu.html')?>
 <br/>
-<div class="container">
+<section>
+<div class="jumbotron page" id="page1">
     <div class="row">
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
+        <div class="col-sm-3 mb-2">
+            <div class="card">
                 <img src="https://d3timt52sxdbq0.cloudfront.net/wp-content/uploads/2016/12/calendrierprojet.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Emplois du temps</h5>
@@ -29,8 +30,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
+        <div class="col-sm-3 mb-2">
+            <div class="card">
                 <img src="https://img.aws.la-croix.com/2019/11/13/1201060070/premier-degre-enseignant-debutant-gagne-9-moins-moyenne-lOCDE_0_1400_933.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Enseignants </h5>
@@ -39,41 +40,41 @@
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
+        <div class="col-sm-3 mb-2">
+            <div class="card">
                 <img src="https://www.authentikusa.com/uploads/images/orig/bon-a-savoir/informations-pratiques.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">informations pratiques</h5>
-                     <p class="card-text">Consulter vos informations pratiques  </p>
+                     <p class="card-text">Consulter toutes les informations pratiques qui vous interessent  </p>
                      <center><a href="" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
+        <div class="col-sm-3 mb-2">
+            <div class="card">
                 <img src="https://foodiesconsulting.com/wp-content/uploads/differentes-formes-de-restauration-1200x780.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Restauration</h5>
-                     <p class="card-text">vous pouvez consulter tout ce qui concerne la resaturation. </p>
+                     <p class="card-text">vous pouvez consulter tout ce qui concerne la resaturation </p>
                      <center><a href="restauration" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
+</div>   
+</section>
 
 
 <h1 id="schoolname" style="color:cadetblue" class="text-center">Articles</h1>
-<div class="container">
+<section>
+<div class="jumbotron page" id="page1">
     <div class="row">
         <?php 
         while ($data=$articles->fetch())
         {
         ?>
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
+        <div class="col-sm-3 mb-2">
+            <div class="card">
                 <img src=<?php echo $data['lien'] ?> class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title"><?php echo $data['titre']?></h5>
@@ -87,7 +88,9 @@
         $articles->closeCursor();
         ?>
     </div>
-</div>
+</div>   
+</section>
+
 <br/><br/>
 
 

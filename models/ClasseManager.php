@@ -58,6 +58,10 @@ class ClasseManager
             $stmt1= $db->prepare($sql1);
             $stmt1->execute([1,$id]);
 
+            $sql2 = "DELETE FROM ensclasse WHERE id_classe = ?";
+            $stmt2= $db->prepare($sql2);
+            $stmt2->execute([$id]);
+
             $sql = "DELETE FROM classes WHERE id = ?";
             $stmt= $db->prepare($sql);
             $stmt->execute([$id]);

@@ -9,7 +9,7 @@ class ArticleManager
         try
         {
     
-            $req=$db->query('SELECT * FROM articles WHERE '.$condition);
+            $req=$db->query('SELECT * FROM articles WHERE '.$condition.' order by date desc ' );
             return $req;
         }
         catch (\Exception $e)

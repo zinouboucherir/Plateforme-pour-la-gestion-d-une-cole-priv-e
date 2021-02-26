@@ -29,12 +29,14 @@ class AdminArticleController extends Controller {
             exit();
         }
         $data=$request->all();
-        $filename = $_FILES["image"]["name"]; 
-        $tempname = $_FILES["image"]["tmp_name"];     
-       // $folder = Application::$STORAGE_DIR.$filename;
-        $folder = "../public/images/".$filename;
-        move_uploaded_file($tempname, $folder);
-        $folder= substr($folder,10);
+        $allowedExts = array("gif", "jpeg", "jpg", "png");
+        $extension = end(explode(".", $_FILES["file"]["name"]));
+            $filename = $_FILES["image"]["name"]; 
+            $tempname = $_FILES["image"]["tmp_name"];     
+           // $folder = Application::$STORAGE_DIR.$filename;
+            $folder = "../public/images/".$filename;
+            move_uploaded_file($tempname, $folder);
+            $folder= substr($folder,10);
         $articleManager=new ArticleManager();
         $articleManager->insertArticle($_POST['titre'],$_POST['descr'],$folder,$_POST['type']);
         $articles = $articleManager->getArticles();

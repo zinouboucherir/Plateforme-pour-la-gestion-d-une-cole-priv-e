@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    
 <nav class="navbar navbar-expand-lg navbar-light ">
    
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,10 +49,11 @@
         ?>
 <h1 id="schoolname" style="color:cadetblue" class="text-center">Binevenu <?php echo $data['prenom']; ?></h1>
 <br/>
-<div class="container">
+<section>
+<div class="jumbotron page" id="page1">
     <div class="row">
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
+        <div class="col-sm-3 mb-2">
+            <div class="card">
                 <img src="https://d3timt52sxdbq0.cloudfront.net/wp-content/uploads/2016/12/calendrierprojet.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Emplois du temps</h5>
@@ -60,8 +62,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
+        <div class="col-sm-3 mb-2">
+            <div class="card">
                 <img src="https://www.fcpe95.com/wp-content/uploads/2017/02/enfants-ecole.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Inforamtion personnelles</h5>
@@ -70,8 +72,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
+        <div class="col-sm-3 mb-2">
+            <div class="card">
                 <img src="https://www.ucl.ac.uk/teaching-learning/sites/teaching-learning/files/migrated-images/feedback-grade_1.jpeg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Notes</h5>
@@ -80,8 +82,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
+        <div class="col-sm-3 mb-2">
+            <div class="card">
                 <img src="https://appt.asso.fr/wp-content/uploads/2017/10/tempsdactivitesperiscolaires-870x432.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Activitées Extrascolaires</h5>
@@ -91,8 +93,13 @@
             </div>
         </div>
     </div>
-</div>
+</div>    
+</section>
+
 </body>
 <BR></BR>
 <?php include('footer.html')?>
+<script src="JS/jquery.js"></script>
+ <script src="JS/bootstrap.js"></script>
+  <script src="JS/accueiljs.js"></script>
 </html>

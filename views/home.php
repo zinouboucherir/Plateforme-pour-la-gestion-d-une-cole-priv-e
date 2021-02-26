@@ -30,31 +30,36 @@
         </div>
     </center>
     <br/>
+
 </section>
-<br/>
-<div class="container">
-    <div class="row">
-        <?php 
-        while ($data=$articles->fetch())
-        {
-        ?>
-        <div class="col-3 mb-2">
-            <div class="card" style="width:18rem; height:400px">
-                <img src=<?php echo $data['lien'] ?> class="card-img-top" width="100" height="200px" alt="...">
+<br>
+    <section>
+        <div class="jumbotron page" id="page1">
+            <!-- first  the first row -->
+            <div class="row">
+            <?php 
+            while ($data=$articles->fetch())
+            {
+            ?>
+                <div class="col-sm-3 mb-2">
+                <div class="card">
+                <img src=<?php echo $data['lien'] ?> class="card-img-top" width="100px" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title"><?php echo $data['titre']?></h5>
                      <p class="card-text"><?php echo  substr($data['descr'],0,100)?>...</p>
                      <center><a href="<?php echo "showarticle?id=".$data['id']?>" class="btn btn-info text-center">Afficher la suite</a></center>
                 </div>
             </div>
-        </div>
-        <?php
+                </div>
+                <?php
         }
         $articles->closeCursor();
         ?>
-    </div>
-</div>
-<section>
+            </div>
+        </div>
+
+
+</section>
 <br/>
 <?php 
         $data=$adresse->fetch()
