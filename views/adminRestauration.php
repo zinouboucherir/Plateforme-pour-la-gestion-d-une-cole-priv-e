@@ -20,9 +20,8 @@
 
 <?php include('adminMenu.php') ?>
 
-<div class="container-xl">
-	<div class="table-responsive">
-		<div class="table-wrapper">
+<section>
+<div class="jumbotron page" id="page1">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -34,7 +33,7 @@
 				</div>
 			</div>
 			<input type="text" id="myInput" onkeyup="myFunction3()" placeholder="rechercher..">
-			<table class="table table-hover table-bordered table-striped" id="myTable" >
+			<table class="table table-hover table-bordered table-responsive bg-white"  id="myTable" >
 				<thead>
 					<tr>
                         <th>Jour</th>
@@ -49,10 +48,10 @@
                       {
                         ?>
                     <tr>
-                        <td style="width:15%;"><?php echo $data['jour']?></td>		
-                        <td style="width:15%;"><?php echo $data['entrée']?></td>
-                        <td style="width:15%;"><?php echo $data['principale']?></td>
-                        <td style="width:15%;"><?php echo $data['dessert']?></td>
+                        <td style="width:30%;"><?php echo $data['jour']?></td>		
+                        <td style="width:30%;"><?php echo $data['entrée']?></td>
+                        <td style="width:30%;"><?php echo $data['principale']?></td>
+                        <td style="width:30%;"><?php echo $data['dessert']?></td>
                         <td style="width: 10%;" >
 							<a href="#editEmployeeModal<?php echo $data['id']?>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal<?php echo $data['id']?>" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -130,8 +129,7 @@
 			</tbody>
 		</table>
 	</div>
-	</div>        
-</div>
+</section>
 <!-- add Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">

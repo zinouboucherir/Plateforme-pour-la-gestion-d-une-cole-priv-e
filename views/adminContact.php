@@ -45,9 +45,8 @@
 	</div>
 </div>
                         </div>
-<div class="container-xl">
-	<div class="table-responsive">
-		<div class="table-wrapper">
+<section>
+<div class="jumbotron page" id="page1">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -58,7 +57,7 @@
 					</div>
 				</div>
 			</div>
-			<table class="table table-hover table-bordered table-striped" >
+			<table class="table table-hover table-bordered table-responsive bg-white" >
 				<thead>
 					<tr>
                         <th>numéro de téléphone</th>
@@ -130,8 +129,7 @@
 			</tbody>
 		</table>
 	</div>
-	</div>        
-</div>
+</section>
  <!--------------------------------------------------------------------------------------------------->
  <div id="addEmployeeModal2" class="modal fade">
 	<div class="modal-dialog">
@@ -157,9 +155,8 @@
 	</div>
 </div>
                         </div>
-<div class="container-xl">
-	<div class="table-responsive">
-		<div class="table-wrapper">
+<section>
+<div class="jumbotron page" id="page1">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -170,7 +167,7 @@
 					</div>
 				</div>
 			</div>
-			<table class="table table-hover table-bordered table-striped" >
+			<table class="table table-hover table-bordered table-responsive bg-white" >
 				<thead>
 					<tr>
                         <th>numéro de fax</th>
@@ -240,10 +237,9 @@
         $faxs->closeCursor();
         ?>
 			</tbody>
-		</table>
-	</div>
-	</div>        
+		</table>      
 </div>
+</section>
 <!--------------------------------------------------------------------------------------------------->
 <div id="addEmployeeModal3" class="modal fade">
 	<div class="modal-dialog">
@@ -269,9 +265,8 @@
 	</div>
 </div>
                         </div>
-<div class="container-xl">
-	<div class="table-responsive">
-		<div class="table-wrapper">
+<section>
+<div class="jumbotron page" id="page1">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -282,7 +277,7 @@
 					</div>
 				</div>
 			</div>
-			<table class="table table-hover table-bordered table-striped" >
+			<table class="table table-hover table-bordered table-responsive bg-white" >
 				<thead>
 					<tr>
                         <th>E-mails</th>
@@ -353,14 +348,12 @@
         ?>
 			</tbody>
 		</table>
-	</div>
-	</div>        
 </div>
-<!--------------------------------------------------------------------------------------------------->
+</section>
 
-<div class="container-xl">
-	<div class="table-responsive">
-		<div class="table-wrapper">
+<!--------------------------------------------------------------------------------------------------->
+<section>
+<div class="jumbotron page" id="page1">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -368,7 +361,7 @@
 					</div>
 				</div>
 			</div>
-			<table class="table table-hover table-bordered table-striped" style="width:100%;" >
+			<table class="table table-hover table-bordered table-responsive bg-white" style="width:100%;" >
 				<thead>
 					<tr>
                         <th>Adresse</th>
@@ -435,7 +428,6 @@
 	</tbody>
 		</table>
 	</div>
-	</div>        
-</div>
+</section>
 </body>
 </html>

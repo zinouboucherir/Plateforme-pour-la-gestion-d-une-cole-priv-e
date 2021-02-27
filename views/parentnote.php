@@ -45,8 +45,6 @@
 </nav>
 <section>
 <div class="jumbotron page" id="page1">
-	<div class="table-responsive">
-		<div class="table-wrapper">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -55,7 +53,7 @@
 				</div>
 			</div>
             <input type="text" id="myInput" onkeyup="myFunction3()" placeholder="rechercher..">
-     <table class="table table-hover table-bordered" id="myTable" style="width:100%;">
+     <table class="table table-hover table-bordered table-responsive bg-white" id="myTable" style="width:100%;">
   <tbody>
   <thead>
     <tr>
@@ -72,12 +70,12 @@
                       {
                         ?>
                     <tr> 
-                        <td style="width:15%;"><?php echo $data['prenom']?></td>
-                        <td style="width:15%;"><?php echo $data['nom']?></td>
-                        <td style="width:15%;"><?php echo $data['matiere']?></td>
-                        <td style="width:15%;"><?php echo $data['cc']?></td>
-                        <td style="width:15%;"><?php echo $data['devoir']?></td>
-                        <td style="width:15%;"><?php echo $data['examen']?></td>
+                        <td style="width:10%;"><?php echo $data['prenom']?></td>
+                        <td style="width:10%;"><?php echo $data['nom']?></td>
+                        <td style="width:10%;"><?php echo $data['matiere']?></td>
+                        <td style="width:10%;"><?php echo $data['cc']?></td>
+                        <td style="width:10%;"><?php echo $data['devoir']?></td>
+                        <td style="width:10%;"><?php echo $data['examen']?></td>
                     </tr> 
 
                     <?php
@@ -86,9 +84,6 @@
         ?>
   </tbody>
 </table>
-
-        </div>
-    </div>
 </div>
 </section>
 

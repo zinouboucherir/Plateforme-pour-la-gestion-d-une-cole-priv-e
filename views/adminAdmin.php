@@ -77,9 +77,8 @@
 	</div>
 </div>
                         </div>
-<div class="container-xl">
-	<div class="table-responsive">
-		<div class="table-wrapper">
+<section>
+<div class="jumbotron page" id="page1">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -91,7 +90,7 @@
 				</div>
 			</div>
 			<input type="text" id="myInput" onkeyup="myFunction3()" placeholder="rechercher..">
-			<table class="table table-hover table-bordered table-striped" id="myTable" >
+			<table class="table table-hover table-bordered table-responsive bg-white" id="myTable" >
 				<thead>
 					<tr>
                         <th>id</th>
@@ -212,5 +211,6 @@
 	</div>
 	</div>        
 </div>
+</section>
 </body>
 </html>

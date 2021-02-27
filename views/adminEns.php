@@ -74,9 +74,9 @@
 	</div>
 </div>
                         </div>
-<div class="container-xl">
-	<div class="table-responsive">
-		<div class="table-wrapper">
+
+<section>
+<div class="jumbotron page" id="page1">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -88,7 +88,7 @@
 				</div>
 			</div>
 			<input type="text" id="myInput" onkeyup="myFunction3()" placeholder="rechercher..">
-			<table class="table table-hover table-bordered table-striped" id="myTable" >
+			<table class="table table-hover table-bordered table-responsive bg-white" id="myTable" >
 				<thead>
 					<tr>
                         <th>Nom</th>
@@ -105,12 +105,12 @@
                       {
                         ?>
                     <tr>
-                        <td style="width:15%;"><?php echo $data['nom']?></td>	
-                        <td style="width:15%;"><?php echo $data['prenom']?></td>
-                        <td style="width:15%;"><?php echo $data['matiere']?></td>
-                        <td style="width:15%;"><?php echo $data['jourRec']?></td>	
-                        <td style="width:15%;"><?php echo $data['heureRec']?></td> 
-                        <td style="width:15%;"><a href="<?php echo"adminEnsClasse?id=".$data['id']?>" class="btn btn-warning text-center">Classes</a></td>	             
+                        <td style="width:25%;"><?php echo $data['nom']?></td>	
+                        <td style="width:25%;"><?php echo $data['prenom']?></td>
+                        <td style="width:25%;"><?php echo $data['matiere']?></td>
+                        <td style="width:25%;"><?php echo $data['jourRec']?></td>	
+                        <td style="width:25%;"><?php echo $data['heureRec']?></td> 
+                        <td style="width:20%;"><a href="<?php echo"adminEnsClasse?id=".$data['id']?>" class="btn btn-warning text-center">Classes</a></td>	             
                         <td style="width: 10%;" >
 							<a href="#editEmployeeModal<?php echo $data['id']?>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal<?php echo $data['id']?>" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -202,7 +202,7 @@
 			</tbody>
 		</table>
 	</div>
-	</div>        
-</div>
+</section>
+
 </body>
 </html>

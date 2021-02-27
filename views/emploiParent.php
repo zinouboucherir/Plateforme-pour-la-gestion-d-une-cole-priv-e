@@ -55,8 +55,8 @@
 			</div>
       <br>
       <input type="text" id="myInput" onkeyup="myFunction3()" placeholder="rechercher..">
-      <div class="table-wrapper table-responsive">
-<table class="table table-hover table-bordered table-striped"  id="myTable">
+    
+<table class="table table-hover table-bordered bg-white table-responsive"  id="myTable">
 				<thead>
 					<tr>
                     <th>Prénom</th>
@@ -102,7 +102,6 @@
 		</table>
         </div>
   
-</div>
 </section>
 
 <br>

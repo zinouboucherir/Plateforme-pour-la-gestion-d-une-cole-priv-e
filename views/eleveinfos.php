@@ -44,8 +44,6 @@
 </nav>
 <section>
 <div class="jumbotron page" id="page1">
-	<div class="table-responsive">
-		<div class="table-wrapper">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -54,43 +52,43 @@
 				</div>
 			</div>
 <br> <br>
-        <table class="table table-hover table-bordered table-striped" style="width:100%;">
+        <table class="table table-hover table-bordered table-responsive bg-white" style="width:100%;">
   <tbody>
   <?php
                     $data=$infos->fetch();
                       {
                         ?>
                     <tr> 
-                        <th>Classe</th>
-                        <td style="width:30%;"><?php echo $data['annee'].substr($data['cycle'],0,1).$data['numroClasse']?></td>
+                        <th style="width:10%;">Classe</th>
+                        <td style="width:10%;"><?php echo $data['annee'].substr($data['cycle'],0,1).$data['numroClasse']?></td>
                     </tr> 
                     <tr> 
-                        <th>Cycle</th>
-                        <td style="width:15%;"><?php echo $data['cycle']?></td>
+                        <th style="width:10%;">Cycle</th>
+                        <td style="width:10%;"><?php echo $data['cycle']?></td>
                     </tr> 
                     <tr> 
-                        <th>Nom</th>
-                        <td style="width:15%;"><?php echo $data['nom']?></td>
+                    <tr> 
+                        <th style="width:10%;">Nom</th>
+                        <td style="width:10%;"><?php echo $data['nom']?></td>
                     </tr> 
                     <tr> 
-                        <th>Prénom</th>
-                        <td style="width:15%;"><?php echo $data['prenom']?></td>
+                        <th style="width:10%;">Prénom</th>
+                        <td style="width:10%;"><?php echo $data['prenom']?></td>
                     </tr> 
                     <tr> 
-                        <th>Adresse</th>
-                        <td style="width:15%;"><?php echo $data['adresse']?></td>
+                        <th style="width:10%;">Adresse</th>
+                        <td style="width:10%;"><?php echo $data['adresse']?></td>
                     </tr> 
                     <tr> 
-                        <th>Numéro de téléphoen 1</th>
-                        <td style="width:15%;"><?php echo $data['tlfn1']?></td>
+                        <th style="width:10%;">Numéro de téléphone 1</th>
+                        <td style="width:10%;"><?php echo $data['tlfn1']?></td>
                     </tr> 
-                    <th>Numéro de téléphoen 2</th>
-                        <td style="width:15%;"><?php echo $data['tlfn2']?></td>
+                    <th style="width:10%;">Numéro de téléphone 2</th>
+                        <td style="width:10%;"><?php echo $data['tlfn2']?></td>
                     </tr> 
-                    <th>Numéro de téléphoen 3</th>
-                        <td style="width:15%;"><?php echo $data['tlfn3']?></td>
+                    <th style="width:10%;">Numéro de téléphone 3</th>
+                        <td style="width:10%;"><?php echo $data['tlfn3']?></td>
                     </tr> 
-
         <?php
           }
         $infos->closeCursor();
@@ -99,8 +97,6 @@
 </table>
 
         </div>
-    </div>
-</div>
 </section>
 
 <br>

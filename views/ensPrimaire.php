@@ -17,9 +17,7 @@
 <br/>
 <?php include('menu.html')?>
 <br/>
-<div class="container-xl">
-	<div class="table-responsive">
-		<div class="table-wrapper">
+<section><div class="jumbotron page" id="page1">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -28,13 +26,13 @@
 				</div>
 			</div>
 <input type="text" id="myInput" onkeyup="myFunction3()" placeholder="rechercher..">
-<table class="table table-hover table-bordered table-striped" id="myTable" >
+<table class="table table-hover table-bordered table-responsive bg-white" id="myTable" >
 <thead>
 					<tr>
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Matiére</th>
-                        <th>joure de réception</th>
+                        <th>jour de réception</th>
                         <th>heure de réception</th>
                     
 					</tr>
@@ -45,11 +43,11 @@
                       {
                         ?>
                     <tr>
-                        <td style="width:15%;"><?php echo $data['nom']?></td>	
-                        <td style="width:15%;"><?php echo $data['prenom']?></td>
-                        <td style="width:15%;"><?php echo $data['matiere']?></td>
-                        <td style="width:15%;"><?php echo $data['jourRec']?></td>	
-                        <td style="width:15%;"><?php echo $data['heureRec']?></td> 
+                        <td style="width:25%;"><?php echo $data['nom']?></td>	
+                        <td style="width:25%;"><?php echo $data['prenom']?></td>
+                        <td style="width:25%;"><?php echo $data['matiere']?></td>
+                        <td style="width:25%;"><?php echo $data['jourRec']?></td>	
+                        <td style="width:25%;"><?php echo $data['heureRec']?></td> 
                     
 					</tr>
         <?php
@@ -58,9 +56,9 @@
         ?>
 		</tbody>
 		</table>
-        </div>
-    </div>
 </div>
+</section>
+
         <br/><br/>
 <?php include('footer.html')?>
 <script src="JS/jquery.js"></script>

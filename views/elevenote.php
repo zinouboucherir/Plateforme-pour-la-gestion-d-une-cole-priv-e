@@ -47,8 +47,7 @@
   
 </section>
 <div class="jumbotron page" id="page1">
-	<div class="table-responsive">
-		<div class="table-wrapper">
+
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
@@ -57,7 +56,7 @@
 				</div>
 			</div>
             <br>
-            <table class="table table-hover table-bordered table-striped" style="width:100%;">
+            <table class="table table-hover table-bordered table-responsive bg-white" style="width:100%;">
               <thead>
                 <tr>
                   <th scope="col">Matiére</th>
@@ -72,10 +71,10 @@
                       {
                         ?>
                     <tr> 
-                        <td style="width:15%;"><?php echo $data['matiere']?></td>
-                        <td style="width:15%;"><?php echo $data['cc']?></td>
-                        <td style="width:15%;"><?php echo $data['devoir']?></td>
-                        <td style="width:15%;"><?php echo $data['examen']?></td>
+                        <td style="width:10%;"><?php echo $data['matiere']?></td>
+                        <td style="width:10%;"><?php echo $data['cc']?></td>
+                        <td style="width:10%;"><?php echo $data['devoir']?></td>
+                        <td style="width:10%;"><?php echo $data['examen']?></td>
                     </tr> 
 
                     <?php
@@ -86,8 +85,6 @@
           </table>
 
         </div>
-    </div>
-</div>
                     </section>
 <br>
 <?php include('footer.html')?>
