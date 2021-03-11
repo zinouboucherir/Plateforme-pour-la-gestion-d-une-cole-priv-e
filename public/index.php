@@ -155,6 +155,8 @@ $app->router->get('/parentlogin',[AuthParentController::class,'login']);
 $app->router->post('/parentlogin',[AuthParentController::class,'connect']);
 $app->router->get('/parentlogout',[AuthParentController::class,'disconnect']);
 $app->router->get('/parent',[ParentController::class,'index']);
+$app->router->get('/parentactivite',[ParentController::class,'activiteParent']);
+
 
 $app->router->get('/parentinfos',[ParentController::class,'infosparent']);
 $app->router->get('/emploiParent',[ParentController::class,'getParentEmploi']);

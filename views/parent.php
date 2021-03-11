@@ -87,7 +87,7 @@
                  <div class="card-body">
                      <h5 class="card-title">Activitées Extrascolaires</h5>
                      <p class="card-text">Consulter les activitées extrascolaires de vos enfants</p>
-                     <center><a href="restauration" class="btn btn-info text-center">Consulter</a></center>
+                     <center><a href="parentactivite" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>

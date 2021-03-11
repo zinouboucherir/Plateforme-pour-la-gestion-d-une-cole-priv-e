@@ -29,6 +29,19 @@ class ParentManager
              return $e;
           }
     }
+    public function getActivity($id)
+    { 
+        $db=DataBase::getInstance();
+        try
+        {   $requete=$db->prepare("SELECT * FROM parenteleve join activite JOIN users on parenteleve.id=activite.eleve_id AND users.id=parenteleve.id WHERE parenteleve.parent_id=?");
+            $requete->execute([$id]);
+            return $requete;
+        }
+        catch (\Exception $e)
+          { 
+             return $e;
+          }
+    }
 
     public function getParent()
     { 

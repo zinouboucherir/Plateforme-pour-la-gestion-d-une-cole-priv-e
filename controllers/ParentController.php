@@ -64,7 +64,21 @@ class ParentController extends Controller {
                 $this->render('parentnote',$params);
             }
 
-        
+            public function activiteParent() {
+                session_start();
+                if(!isset($_SESSION['Parent']))
+                {
+                    header('location:parentlogin');
+                    exit();
+                }
+                $parentManager=new ParentManager();
+                $activites = $parentManager->getActivity($_SESSION['Parent']);
+                
+                $params = [
+                    'activites' => $activites,
+                ];
+                    $this->render('parentactivite',$params);
+                }
     
 
 }
