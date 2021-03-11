@@ -149,6 +149,7 @@ $app->router->get('/eleve',[EleveController::class,'index']);
 $app->router->get('/emploiEleve',[EleveController::class,'getEleveEmploi']);
 $app->router->get('/eleveinfos',[EleveController::class,'infoseleve']);
 $app->router->get('/elevenote',[EleveController::class,'noteEleve']);
+$app->router->get('/eleveactivite',[EleveController::class,'activiteEleve']);
 
 $app->router->get('/parentlogin',[AuthParentController::class,'login']);
 $app->router->post('/parentlogin',[AuthParentController::class,'connect']);
@@ -161,8 +162,8 @@ $app->router->get('/parentnote',[ParentController::class,'noteParent']);
 
 
 $app->router->get('/primaireInfo',[PrimaireController::class,'infoPrimaire']);
-$app->router->get('/moyenInfo',[PrimaireController::class,'infoPrimaire']);
-$app->router->get('/secondaireInfo',[PrimaireController::class,'infoPrimaire']);
+$app->router->get('/moyenInfo',[MoyenController::class,'infoMoyen']);
+$app->router->get('/secondaireInfo',[SecondaireController::class,'infoSecondaire']);
 // end Routes
 
 

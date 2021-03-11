@@ -15,11 +15,10 @@ class SecondaireController extends Controller {
     }
     public function infoSecondaire() {
         $pratiqueManager=new PratiqueManager();
-        $infos = $pratiqueManager->getPratiquePrimaire("'moyen' or cycle='tout'");
+        $infos = $pratiqueManager->getPratique("'secondaire' or cycle='tout'");
         $params = [
             'infos' => $infos,
         ];
-
-        $this->render('primaireInfo',$params);
+        $this->render('secondaireInfo',$params);
     }
 }

@@ -44,6 +44,19 @@ class EleveManager
              return $e;
           }
     }
+    public function getActivity($id)
+    { 
+        $db=DataBase::getInstance();
+        try
+        {   $requete=$db->prepare("SELECT * FROM activite where eleve_id=?");
+            $requete->execute([$id]);
+            return $requete;
+        }
+        catch (\Exception $e)
+          { 
+             return $e;
+          }
+    }
     public function getEleves()
     { 
         $db=DataBase::getInstance();

@@ -15,11 +15,10 @@ class PrimaireController extends Controller {
     }
     public function infoPrimaire() {
         $pratiqueManager=new PratiqueManager();
-        $infos = $pratiqueManager->getPratiquePrimaire("'primaire' or cycle='tout'");
+        $infos = $pratiqueManager->getPratique("'primaire' or cycle='tout'");
         $params = [
             'infos' => $infos,
         ];
-
         $this->render('primaireInfo',$params);
     }
 }

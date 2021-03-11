@@ -15,11 +15,11 @@ class MoyenController extends Controller {
     }
     public function infoMoyen() {
         $pratiqueManager=new PratiqueManager();
-        $infos = $pratiqueManager->getPratiquePrimaire("'moyen' or cycle='tout'");
+        $infos = $pratiqueManager->getPratique("'moyen' or cycle='tout'");
         $params = [
             'infos' => $infos,
         ];
 
-        $this->render('primaireInfo',$params);
+        $this->render('moyenInfo',$params);
     }
 }

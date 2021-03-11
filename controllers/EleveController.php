@@ -62,4 +62,19 @@ class EleveController extends Controller {
             ];
                 $this->render('elevenote',$params);
             }
+            public function activiteEleve() {
+                session_start();
+                if(!isset($_SESSION['Eleve']))
+                {
+                    header('location:elevelogin');
+                    exit();
+                }
+                $eleveManager=new EleveManager();
+                $activites = $eleveManager->getActivity($_SESSION['Eleve']);
+                
+                $params = [
+                    'activites' => $activites,
+                ];
+                    $this->render('eleveactivite',$params);
+                }
 }
