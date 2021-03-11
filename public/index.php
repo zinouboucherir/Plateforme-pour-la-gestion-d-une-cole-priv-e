@@ -158,6 +158,11 @@ $app->router->get('/parent',[ParentController::class,'index']);
 $app->router->get('/parentinfos',[ParentController::class,'infosparent']);
 $app->router->get('/emploiParent',[ParentController::class,'getParentEmploi']);
 $app->router->get('/parentnote',[ParentController::class,'noteParent']);
+
+
+$app->router->get('/primaireInfo',[PrimaireController::class,'infoPrimaire']);
+$app->router->get('/moyenInfo',[PrimaireController::class,'infoPrimaire']);
+$app->router->get('/secondaireInfo',[PrimaireController::class,'infoPrimaire']);
 // end Routes
 
 

@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 use app\models\ArticleManager;
+use app\models\PratiqueManager;
 class SecondaireController extends Controller {
 
     public function index() {
@@ -11,5 +12,14 @@ class SecondaireController extends Controller {
         ];
 
         $this->render('secondaire',$params);
+    }
+    public function infoSecondaire() {
+        $pratiqueManager=new PratiqueManager();
+        $infos = $pratiqueManager->getPratiquePrimaire("'moyen' or cycle='tout'");
+        $params = [
+            'infos' => $infos,
+        ];
+
+        $this->render('primaireInfo',$params);
     }
 }

@@ -46,7 +46,7 @@
                  <div class="card-body">
                      <h5 class="card-title">informations pratiques</h5>
                      <p class="card-text">Consulter vos informations pratiques  </p>
-                     <center><a href="" class="btn btn-info text-center">Consulter</a></center>
+                     <center><a href="moyenInfo" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>

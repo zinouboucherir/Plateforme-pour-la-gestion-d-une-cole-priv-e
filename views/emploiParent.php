@@ -80,7 +80,7 @@
                       {
                         ?>
                     <tr>
-                        <td><?php echo $data['prenom']?></td>
+                        <td ><?php echo $data['prenom']?></td>
                         <td><?php echo $data['nom']?></td>
                         <td><?php echo $data['annee'].substr($data['cycle'],0,1).$data['numroClasse']?></td>
                         <td><?php echo $data['jour']?></td>	

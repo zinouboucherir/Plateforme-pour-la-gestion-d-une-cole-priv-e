@@ -59,7 +59,7 @@ class AdminEnfantController extends Controller {
         $params = [
             'enfants'=> $enfants,
         ];
-        header('location:adminEnfant?id='.$_GET['id']);
+        header('location:adminEnfant?id='.$id_parent);
         $this->render('adminEnfant',$params);
     }
 }
