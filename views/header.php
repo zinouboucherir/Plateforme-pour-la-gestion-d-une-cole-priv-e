@@ -1,4 +1,3 @@
-
    <section class=" bloc">
     <div class="container">
         <div class="row">
@@ -16,4 +15,3 @@
     </div>
  
    </section>
-

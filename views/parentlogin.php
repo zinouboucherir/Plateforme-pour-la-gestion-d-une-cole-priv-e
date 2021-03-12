@@ -20,7 +20,7 @@
 </style>
 </head>
 <body>
-<?php include('menu.html')?>
+<?php include('menu.php')?>
 <div class="login-form" style="opacity: 0.8;">
     <form action="parentlogin" method="post">
 		<div class="avatar">

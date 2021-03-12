@@ -99,7 +99,7 @@
 </section>
 
 <br>
-<section><?php include('footer.html')?></section>
+<section><?php include('footer.php')?></section>
 
 </body>
 </html>

@@ -13,9 +13,9 @@
   
 </head>
 <body >
-<?php include('header.html')?>
+<?php include('header.php')?>
 <br/>
-<?php include('menu.html')?>
+<?php include('menu.php')?>
 <br/>
 <?php 
         while ($data=$article->fetch())
@@ -35,7 +35,7 @@
         <?php
         }
         ?>
-<?php include('footer.html')?>
+<?php include('footer.php')?>
 <script src="JS/jquery.js"></script>
  <script src="JS/bootstrap.js"></script>
   <script src="JS/accueiljs.js"></script>

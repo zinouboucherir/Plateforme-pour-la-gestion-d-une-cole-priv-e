@@ -20,7 +20,7 @@
     }
 </style>
 <body>
-<?php include('menu.html')?>
+<?php include('menu.php')?>
 <div class="login-form" style="  opacity: 0.8;">
     <form action="elevelogin" method="post">
 		<div class="avatar">

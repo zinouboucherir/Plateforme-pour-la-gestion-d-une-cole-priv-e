@@ -31,7 +31,7 @@
                  <div class="card-body">
                      <h5 class="card-title"><?php echo $data['titre']?></h5>
                      <p class="card-text"><?php echo  substr($data['descr'],0,150)?>...</p>
-                     <center><a href="<?php echo "showarticle?id=".$data['id']?>" class="btn btn-info text-center">Afficher la suite</a></center>
+                     <center><a href="<?php echo "showinfo?id=".$data['id']?>" class="btn btn-info text-center">Afficher la suite</a></center>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
 
 
 <br/><br/>
-<?php include('footer.html')?>
+<?php include('footer.php')?>
 <script src="JS/jquery.js"></script>
  <script src="JS/bootstrap.js"></script>
   <script src="JS/accueiljs.js"></script>

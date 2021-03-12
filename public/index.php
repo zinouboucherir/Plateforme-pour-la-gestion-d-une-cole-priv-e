@@ -6,6 +6,7 @@ use app\controllers\AdminArticleController;
 use app\controllers\ContactController;
 use app\controllers\AuthController;
 use app\controllers\ShowArticleController;
+use app\controllers\ShowInfoController;
 use app\controllers\AdminPresentationController;
 use app\controllers\PresentationController;
 use app\controllers\PrimaireController;
@@ -45,6 +46,7 @@ $app->router->get('/adminArticles',[AdminArticleController::class,'index']);
 $app->router->post('/addArticles',[AdminArticleController::class,'addArticles']);    // HOME PAGE :: /
 $app->router->get('/home',[HomeController::class,'index']); 
 $app->router->get('/showarticle',[ShowArticleController::class,'ShowArticle']); 
+$app->router->get('/showinfo',[ShowInfoController::class,'ShowInfo']); 
 $app->router->get('/Articledelete',[AdminArticleController::class,'supprimerArticle']); 
 $app->router->post('/Articleupdate',[AdminArticleController::class,'editArticles']);
 $app->router->get('/adminUsers',[AdminUsersController::class,'index']);
