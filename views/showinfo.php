@@ -21,8 +21,7 @@
         while ($data=$info->fetch())
         {
         ?>
-        <center>
-        <div class="col-8 mb-2" >
+        <div class="col-12 mb-2" >
         <br>
             <div class="card" style="width:100%;">
                  <div class="card-body">
@@ -31,7 +30,6 @@
                 </div>
             </div>
         </div>
-        </center>
         <?php
         }
         ?>

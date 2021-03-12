@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 use app\models\ParentManager;
+use app\models\ArticleManager;
 use app\models\EmploiDuTempsManager;
 class ParentController extends Controller {
 
@@ -13,8 +14,11 @@ class ParentController extends Controller {
     }
     $parentManager=new ParentManager();
     $infos =   $parentManager->getParentInfos( $_SESSION['Parent']);
+    $parentArticle=new ArticleManager();
+    $articles=$parentArticle->getArticles("type='parent' or type='tout'");
     $params = [
         'infos' => $infos,
+        'articles'=>$articles,
     ];
         $this->render('parent',$params);
     }

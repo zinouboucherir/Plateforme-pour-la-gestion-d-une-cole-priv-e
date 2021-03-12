@@ -18,19 +18,19 @@
            <a href="adminArticles"class="nav-link text-light"><i class="fa fa-newspaper-o"></i> Articles</a> 
        </li>
        <li class="nav-item ">
-           <a href=""class="nav-link text-light"><i class="fa fa-male"></i> Utilisateurs</a>
+           <a href="adminUsers"class="nav-link text-light"><i class="fa fa-male"></i> Utilisateurs</a>
        </li>
        <li class="nav-item ">
-           <a href="#contact"class="nav-link text-light"><i class="fa fa-phone"></i> Contact</a> 
+           <a href="adminContact"class="nav-link text-light"><i class="fa fa-phone"></i> Contact</a> 
        </li>
        <li class="nav-item ">
-           <a href="#contact"class="nav-link text-light"><i class="fa fa-cutlery"></i> Restauration</a> 
+           <a href="adminRestau"class="nav-link text-light"><i class="fa fa-cutlery"></i> Restauration</a> 
        </li>
        <li class="nav-item ">
-           <a href="#contact"class="nav-link text-light"><i class="fa fa-address-book-o"></i> Enseignant</a> 
+           <a href="adminEns"class="nav-link text-light"><i class="fa fa-address-book-o"></i> Enseignant</a> 
        </li>
        <li class="nav-item ">
-           <a href="#contact"class="nav-link text-light"><i class="fa fa-calendar"></i> Emploi du temps</a> 
+           <a href="adminEmploi"class="nav-link text-light"><i class="fa fa-calendar"></i> Emploi du temps</a> 
        </li>
      </ul>
    </div>

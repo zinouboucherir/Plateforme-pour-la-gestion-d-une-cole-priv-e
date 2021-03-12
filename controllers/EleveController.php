@@ -13,6 +13,7 @@ class EleveController extends Controller {
     }
     $eleveManager=new EleveManager();
     $infos =   $eleveManager->getEleveInfos( $_SESSION['Eleve']);
+    
     $params = [
         'infos' => $infos,
     ];

@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="col-sm-3 mb-2">
-            <div class="card" style="background-image:url('https://foodiesconsulting.com/wp-content/uploads/differentes-formes-de-restauration-1200x780.jpg');background-size: cover;">
+            <div class="card" style="background-image:url('https://images.squarespace-cdn.com/content/56a2785c69a91af45e06a188/1523033881435-CHQ4W7OIJSDSVPS044ZG/restaurant-healthy-food-menu-program.png?format=1500w&content-type=image%2Fpng');background-size: cover;">
                  <div class="card-body">
                  </br></br></br></br></br></br>
                      <center><a href="adminRestau" class="btn btn-info text-center">Gérer la restauration</a></center>
@@ -62,7 +62,7 @@
 <section>
     <div class="row">
         <div class="col-sm-3 mb-2">
-            <div class="card" style="background-image:url('https://d3timt52sxdbq0.cloudfront.net/wp-content/uploads/2016/12/calendrierprojet.jpg');background-size: cover;">
+            <div class="card" style="background-image:url('https://image.freepik.com/free-photo/red-pin-event-calendar-background-close-up-time_37282-328.jpg');background-size: cover;">
                  <div class="card-body">
                  </br></br></br></br></br></br>
                      <center><a href="adminEmploi" class="btn btn-info text-center">Gérer les emplois du temps</a></center>

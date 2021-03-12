@@ -12,28 +12,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('https://previews.123rf.com/images/romastudio/romastudio1408/romastudio140800007/30548427-healthy-food-background-studio-photography-of-different-fruits-and-vegetables-on-wooden-table.jpg');
+background-size: cover;" >
 <?php include('header.php')?> 
 <br/>
 <?php include('menu.php')?>
 <br/>
-<h1 id="schoolname" style="color:cadetblue" class="text-center">Restauration</h1>
-<br/>
+
 <?php 
 
         while ($data=$restaus->fetch())
         {
         ?>
-<div class="card text-center">
-  <div class="card-header">
-  <h5 id="schoolname" style="color:cadetblue; font-size: 25px;" class="text-center"><?php  echo $data['jour']?></h5>
+        <center>
+        <div class="col-sm-12 mb-2" style="width: 70%;">
+                <div class="card">
+                <div class="card-header">
+  <h5 id="schoolname" style="color:#FF8C3E; font-size: 25px;" class="text-center"><?php  echo $data['jour']?></h5>
   </div>
-  <div class="card-body">
-    <h4 class="card-title">Entrée: <b><?php echo $data['entrée']?></b></h4>
-    <h4 class="card-title">Plat principale:<b><?php echo $data['principale']?></b></h4>
-    <h4 class="card-title">Dessert: <b><?php  echo $data['dessert']?></b></h4>
-  </div>
-</div>
+                 <div class="card-body" style="background-image: url('https://i.pinimg.com/736x/85/5b/fc/855bfce7533a04bca7e0634cca73cb6a.jpg');
+background-size: cover;">
+               <center><h4 class="card-title">Entrée: <b><?php echo $data['entrée']?></b></h4></center>   
+                <center> <h4 class="card-title">Plat principale:<b><?php echo $data['principale']?></b></h4></center> 
+                 <center> <h4 class="card-title">Dessert: <b><?php  echo $data['dessert']?></b></h4></center>
+                </div>
+            </div>
+                </div>
+        </center>
+    
 <?php
         }
         $restaus->closeCursor();

@@ -21,17 +21,15 @@
         while ($data=$article->fetch())
         {
         ?>
-        <center>
-        <div class="col-8 mb-2" >
-            <div class="card" style="width:100%;">
-                <img src=<?php echo $data['lien'] ?> class="card-img-top" width="100" height="400px" alt="...">
+       <div class="mb-2" style="margin-left:20%; margin-right: 20%;" >
+            <div class="card" style="width:auto;">
+                <img src=<?php echo $data['lien'] ?> class="card-img-top" width="100" height="350px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title"><?php echo $data['titre']?></h5>
                      <p class="card-text"><?php echo $data['descr']?></p>
                 </div>
             </div>
         </div>
-        </center>
         <?php
         }
         ?>

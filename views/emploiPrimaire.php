@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
   
 </head>
-<body >
+<body>
 <?php include('header.php')?>
 <br/>
 <?php include('menu.php')?>

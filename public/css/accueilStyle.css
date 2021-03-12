@@ -3,6 +3,7 @@ body{
   font-family:'ubuntu';
   color: #f5f3ee;
 
+
 }
 #header{
   position: relative;
@@ -86,23 +87,23 @@ margin-right:2%;
 @keyframes animation1{
   0%
   {
-   background-image:url(../images/photo1.jpeg);
+   background-image:url(../images/sourire-eleves-du-primaire-assis-classe_1098-3953.jpg);
    border-radius: 8px;
   }
   33%
   {
   border-radius: 8px;
-  background-image:url(../images/image2.jfif) ;
+  background-image:url(../images/tour_05-17_8_1.jpg) ;
   }
   66%
   {
   border-radius: 8px;
-  background-image:url(../images/image3.jfif);
+  background-image:url(../images/Bibliothèque_scolaire.jpg);
   }
   100%
   {
   border-radius: 8px;
-  background-image:url(../images/image4.jfif);
+  background-image:url(../images/eclairage-ecole-bon-1024x623.jpg);
   }
 }
 div.anim{
@@ -111,14 +112,14 @@ div.anim{
     background-size: cover;
     animation-name:animation1 ;
     -webkit-animation-name: animation1;
-    animation-duration: 8s;
-    -webkit-animation-duration:8s;
+    animation-duration: 10s;
+    -webkit-animation-duration:10s;
     animation-iteration-count:infinite;
     width:90%;
     margin-top:2%;
     margin-left:5%;
     margin-right:5%;
-    height:50vh;
+    height:70vh;
 }
 div.anim:hover{
   animation-play-state: paused;

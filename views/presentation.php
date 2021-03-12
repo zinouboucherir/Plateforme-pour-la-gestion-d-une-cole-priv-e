@@ -33,11 +33,11 @@
                         <p class="text-muted"><?php echo $data['texte'] ?></p>
                         </div>
                         <div class="col-md-6 ">
-                            <img src=<?php echo $data['image'] ?> alt=""/>
+                            <img src=<?php echo $data['image'] ?> alt="" height="250px"/>
                         </div>
                     <?php } else {?>
                         <div class="col-md-6 ">
-                            <img src=<?php echo $data['image'] ?> alt=""/>
+                            <img src=<?php echo $data['image'] ?> alt="" height="250px"/>
                         </div>
                         <div class="col-md-6">
                         <h4><?php  echo $data['titre']?></h4>
