@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap Login Form with Avatar Image</title>
+<title>login</title>
 <link rel="stylesheet" href="css/loginstyle.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,12 +17,34 @@
 		<div class="avatar">
 			<img src="http://cdn.onlinewebfonts.com/svg/img_568656.png" alt="Avatar">
 		</div>
-        <h2 class="text-center">Member Login</h2>   
+        <h2 class="text-center">Administrateur</h2>  
+        <?php 
+            if(@$_GET['Empty']==true)
+              {
+          ?>
+          <div class="alert alert-danger">
+          <?php echo $_GET['Empty'] ?>
+        </div>
+              </br>
+            <?php 
+              }
+          ?>
+             <?php 
+            if(@$_GET['invalid']==true)
+              {
+          ?>
+                 <div class="alert alert-danger">
+          <?php echo $_GET['invalid'] ?>
+        </div>
+              </br>
+            <?php 
+              }
+          ?>
         <div class="form-group">
-        	<input type="text" class="form-control" name="username" placeholder="Username" required="required">
+        	<input type="text" class="form-control" name="username" placeholder="Nom d'utilisateur" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            <input type="password" class="form-control" name="password" placeholder="Mot de passe" required="required">
         </div>        
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>

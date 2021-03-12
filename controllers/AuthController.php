@@ -26,11 +26,7 @@ class AuthController extends Controller {
                if (empty($_POST['username']) || empty($_POST['password']))
                {
                 $userManager=new UserManager();
-
-                $params = [
-                    'empty' => "introduisez le nom d'utilisateur et le mot de passe!",
-                ];
-                $this->render('login',$params);
+                header("location:login?Empty=introduisez le nom d'utilisateur et le mot de passe!");
                }
                else
                {
@@ -41,14 +37,13 @@ class AuthController extends Controller {
                    {
                     $_SESSION['User']=$result['id'];
                     header('location:adminHome');
+                 
                     $this->render('adminHome');
                    }
                    else
                    {
-                    $params = [
-                        'invalid' => "svp vous plait entrer un nom d'utilisateur et un mot de passe correctes",
-                    ];
-                    $this->render('login',$params);
+                    header("location:login?invalid=svp vous plait entrer un nom d'utilisateur et un mot de passe correctes");
+
                    } 
                }
                

@@ -27,10 +27,7 @@ class AuthEleveController extends Controller {
                {
                 $userManager=new UserManager();
 
-                $params = [
-                    'empty' => "introduisez le nom d'utilisateur et le mot de passe!",
-                ];
-                $this->render('elevelogin',$params);
+                header("location:elevelogin?Empty=introduisez le nom d'utilisateur et le mot de passe!");
                }
                else
                {
@@ -45,10 +42,7 @@ class AuthEleveController extends Controller {
                    }
                    else
                    {
-                    $params = [
-                        'invalid' => "svp vous plait entrer un nom d'utilisateur et un mot de passe correctes",
-                    ];
-                    $this->render('elevelogin',$params);
+                    header("location:elevelogin?invalid=svp vous plait entrer un nom d'utilisateur et un mot de passe correctes");
                    } 
                }
                

@@ -9,28 +9,30 @@
            <a href="logout"class="nav-link text-light"><i class="fa fa-sign-out"></i>déconnecter</a>
        </li>
        <li class="nav-item">
-           <a href="admin"class="nav-link text-light"><i class="fa fa-home"></i>Accueil</a>
+           <a href="adminHome"class="nav-link text-light"><i class="fa fa-home"></i>Accueil</a>
        </li>
        <li class="nav-item">
          <a href="adminPresentation"class="nav-link text-light"><i class="fa fa-eye"></i> Présentation</a>
        </li>
        <li class="nav-item " >
-           <a href="adminArticles"class="nav-link text-light"><i class="fa fa-calendar"></i> Articles</a> 
+           <a href="adminArticles"class="nav-link text-light"><i class="fa fa-newspaper-o"></i> Articles</a> 
        </li>
        <li class="nav-item ">
-           <a href=""class="nav-link text-light"><i class="fa fa-male"></i> Gestion Page Accueil</a>
+           <a href=""class="nav-link text-light"><i class="fa fa-male"></i> Utilisateurs</a>
        </li>
        <li class="nav-item ">
            <a href="#contact"class="nav-link text-light"><i class="fa fa-phone"></i> Contact</a> 
        </li>
        <li class="nav-item ">
-           <a href="#contact"class="nav-link text-light"><i class="fa fa-phone"></i> Gestion utilisateurs</a> 
+           <a href="#contact"class="nav-link text-light"><i class="fa fa-cutlery"></i> Restauration</a> 
+       </li>
+       <li class="nav-item ">
+           <a href="#contact"class="nav-link text-light"><i class="fa fa-address-book-o"></i> Enseignant</a> 
+       </li>
+       <li class="nav-item ">
+           <a href="#contact"class="nav-link text-light"><i class="fa fa-calendar"></i> Emploi du temps</a> 
        </li>
      </ul>
-     <form class="form-inline my-2 my-lg-0">
-       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-       <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-     </form>
    </div>
 </nav>
 </body>
