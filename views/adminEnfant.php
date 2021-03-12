@@ -108,8 +108,8 @@
 							<p class="text-warning"><small>This action cannot be undone.</small></p>
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"enfantdelete?id=".$data['id']."&id_parent=".$id_parent?>" class="btn btn-danger text-center">Delete</a>
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+							<a href="<?php echo"enfantdelete?id=".$data['id']."&id_parent=".$id_parent?>" class="btn btn-danger text-center">Supprimer</a>
 						</div>
 				</form>
 			</div>

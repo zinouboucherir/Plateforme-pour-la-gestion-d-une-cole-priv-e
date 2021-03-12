@@ -69,8 +69,8 @@
                     </div>						
 				    </div>		
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="upload Emploi">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="valider">
 				</div>
 			</form>
 		</div>
@@ -86,7 +86,7 @@
 						<h2>Gestion <b>des Parents</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter une nouvel classe</span></a>	
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter une nouvel parent</span></a>	
 					</div>
 				</div>
 			</div>
@@ -95,7 +95,6 @@
 				<thead>
 					<tr>
                         <th>id</th>
-                        <th>login</th>
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Adresse</th>
@@ -113,7 +112,6 @@
                         ?>
                     <tr>
                         <td style="width:15%;"><?php echo $data['id']?></td>
-                        <td style="width:15%;"><?php echo $data['login']?></td>
                         <td style="width:15%;"><?php echo $data['nom']?></td>	
                         <td style="width:15%;"><?php echo $data['prenom']?></td>
                         <td style="width:15%;"><?php echo $data['adresse']?></td>

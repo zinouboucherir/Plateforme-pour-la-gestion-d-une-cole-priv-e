@@ -15,7 +15,7 @@ class AdminEnfantController extends Controller {
         $enfantManager=new EnfantManager();
         $enfants=$enfantManager->getParentEnfant($_GET['id']);
         $eleveManager=new EleveManager();
-        $eleves=$eleveManager->getEleves();
+        $eleves=$eleveManager->getElevesForParent();
         $params = [
             'enfants' =>  $enfants,
             'eleves' =>  $eleves,

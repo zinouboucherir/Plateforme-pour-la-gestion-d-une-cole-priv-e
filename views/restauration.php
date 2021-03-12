@@ -20,6 +20,8 @@
 <h1 id="schoolname" style="color:cadetblue" class="text-center">Restauration</h1>
 <br/>
 <?php 
+count($restaus);
+echo count($restaus);
         while ($data=$restaus->fetch())
         {
         ?>

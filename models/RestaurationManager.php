@@ -3,13 +3,20 @@ namespace app\models;
 require_once('DataBase.php');
 class RestaurationManager
 {
-    public function getRestau($condition='true')
+    public function getRestau()
     { 
         $db=DataBase::getInstance();
         try
         {
-    
-            $req=$db->query('SELECT * FROM restauration WHERE '.$condition);
+
+            $req=$db->query("SELECT * FROM restauration  order By 
+            CASE
+            WHEN jour = 'dimanche' THEN 1
+            WHEN jour = 'lundi' THEN 2
+            WHEN jour= 'mardi' THEN 3
+            WHEN jour = 'mercredi' THEN 4
+            WHEN jour = 'jeudi' THEN 5
+            END ASc");
             return $req;
         }
         catch (\Exception $e)

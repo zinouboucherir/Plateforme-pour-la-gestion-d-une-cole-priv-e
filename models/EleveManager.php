@@ -71,6 +71,20 @@ class EleveManager
           }
      
     }
+    public function getElevesForParent()
+    { 
+        $db=DataBase::getInstance();
+        try
+        {
+            $req=$db->query('SELECT * FROM (SELECT utilisateurs.* FROM utilisateurs left join parenteleve ON utilisateurs.id = parenteleve.id where utilisateurs.type=2 and parenteleve.parent_id is null) as a JOIN users on users.id=a.id');
+            return $req;
+        }
+        catch (\Exception $e)
+          { 
+             return $e;
+          }
+     
+    }
     public function insertEleve($login,$pswd,$nom,$prénom,$adresse,$tlfn1,$tlfn2,$tlfn3,$email,$classe)
     {
         $db=DataBase::getInstance();
