@@ -1,32 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/accueilStyle.css">
-    <link rel="stylesheet" href="css/presentation.css">
-    <script src="JS/jquery.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="JS/bootstrap.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="JS/accueiljs.js"></script>
-</head>
-<body>
-
-<?php include('adminMenu.php') ?>
-
+<?php
+namespace app\views;
+class adminEleve{
+public function adminElevebody($eleves,$classes){
+?>
 <!-- add Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<form  method="POST" action="addEleve" enctype="multipart/form-data">
 				<div class="modal-header">						
-					<h4 class="modal-title">Ajouter une classe</h4>
+					<h4 class="modal-title">Ajouter un éléve</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
@@ -40,11 +23,11 @@
                     </div>
                     <div class="form-group">
                      <label>Nom</label>
-						<input type="texte" class="form-control" name="nom" required  >				
+						<input type="texte" pattern="[A-Za-z]*" class="form-control" name="nom" required  >				
                     </div>	
                     <div class="form-group">
                      <label>Prénom</label>
-						<input type="texte" class="form-control" name="prenom" required  >				
+						<input type="texte" pattern="[A-Za-z]*" class="form-control" name="prenom" required  >				
                     </div>
                     <div class="form-group">		
                     <label>Adresse</label>
@@ -53,15 +36,15 @@
                     <div class="form-group">	
                     <label>Téléphone1</label>
                     <div class="form-group">	
-						<input type="texte" class="form-control" name="tlfn1" required >				
+						<input type="texte" pattern="0[0-9]{9}"class="form-control" name="tlfn1" required >				
                     </div>
                     <div class="form-group">	
                     <label>Téléphone2</label>
-						<input type="texte" class="form-control" name="tlfn2" required >				
+						<input type="texte" pattern="0[0-9]{9}" class="form-control" name="tlfn2" required >				
                     </div>
                     <div class="form-group">	
                     <label>Téléphone3</label>
-						<input type="texte" class="form-control" name="tlfn3" required >				
+						<input type="texte" pattern="0[0-9]{9}" class="form-control" name="tlfn3" required >				
                     </div>
                     <div class="form-group">	
                     <label>email</label>
@@ -144,16 +127,16 @@
 						<div class="modal-content">
 						<form>
 							<div class="modal-header">						
-								<h4 class="modal-title">Delete Employee</h4>
+								<h4 class="modal-title">supprimer éléve</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 						<div class="modal-body">					
-							<p>Are you sure you want to delete these Records?</p>
-							<p class="text-warning"><small>This action cannot be undone.</small></p>
+							<p>Voulez-vous vraiment supprimer cet éléve?</p>
+							<p class="text-warning"><small>son action ne peut être annulée.</small></p>
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"elevedelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+							<a href="<?php echo"elevedelete?id=".$data['id']?>" class="btn btn-danger text-center">Supprimer</a>
 						</div>
 				</form>
 			</div>
@@ -165,8 +148,8 @@
 		<div class="modal-content">
 		<form  method="POST" action="eleveupdate" enctype="multipart/form-data">
                 <div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="modifier">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Modifier">
 				</div>
 				<div class="modal-header">						
 					<h4 class="modal-title">Modifier</h4>
@@ -182,11 +165,11 @@
                     </div>
                     <div class="form-group">
                      <label>Nom</label>
-						<input type="texte" class="form-control" name="nom" required value="<?php echo $data['nom']?>" >				
+						<input type="texte" class="form-control" pattern="[a-zA-Z]*" name="nom" required value="<?php echo $data['nom']?>" >				
                     </div>	
                     <div class="form-group">
                      <label>Prénom</label>
-						<input type="texte" class="form-control" name="prenom" required value="<?php echo $data['prenom']?>" >				
+						<input type="texte" class="form-control" pattern="[a-zA-Z]*" name="prenom" required value="<?php echo $data['prenom']?>" >				
                     </div>
                    <div class="form-group">	
                     <label>Adresse</label>
@@ -194,15 +177,15 @@
                     </div>
                     <div class="form-group">	
                     <label>Téléphone1</label>
-						<input type="texte" class="form-control" name="tlfn1" required value="<?php echo $data['tlfn1']?>" >				
+						<input type="texte" class="form-control" pattern="0[0-9]{9}" name="tlfn1" required value="<?php echo $data['tlfn1']?>" >				
                     </div>
                     <div class="form-group">	
                     <label>Téléphone2</label>
-						<input type="texte" class="form-control" name="tlfn2" required value="<?php echo $data['tlfn2']?>" >				
+						<input type="texte" class="form-control"  pattern="0[0-9]{9}" name="tlfn2" required value="<?php echo $data['tlfn2']?>" >				
                     </div>
                     <div class="form-group">	
                     <label>Téléphone3</label>
-						<input type="texte" class="form-control" name="tlfn3" required value="<?php echo $data['tlfn3']?>" >				
+						<input type="texte" class="form-control"  pattern="0[0-9]{9}" name="tlfn3" required value="<?php echo $data['tlfn3']?>" >				
                     </div>
                     <div class="form-group">	
                     <label>email</label>
@@ -210,11 +193,11 @@
                     </div>
                     <div class="form-group">
                   <label>Année</label>
-                  <input type="number" class="form-control" name="annee" required value="<?php echo $data['annee']?>" >				
+                  <input type="number" min="1" class="form-control" name="annee" required value="<?php echo $data['annee']?>" >				
                 </div>
                 <div class="form-group">		
                 <label>Numéro de classe</label>
-                  <input type="number" class="form-control" name="numroClasse" required value="<?php echo $data['numroClasse']?>" >				
+                  <input type="number" min="1" class="form-control" name="numroClasse" required value="<?php echo $data['numroClasse']?>" >				
                 </div>
                 <div class="form-group">	
                     <label>Cycle</label>
@@ -238,6 +221,29 @@
 		</table>
 	</div>
 </section>
- 
-</body>
-</html>
+<?php
+}
+public function afficher_adminEleve($eleves,$classes){
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php
+    $h=new home_view();
+    $h->head();
+    ?>
+    <body>
+    <?php 
+    $header=new header();
+    $header->getheader();
+    $menu=new adminMenu();
+    $menu->getmenu();
+    $this->adminElevebody($eleves,$classes);
+	$footer=new footer();
+    $footer->getfooter();
+    ?>
+    </body>
+    </html>
+    <?php
+        }
+    }
+    ?>

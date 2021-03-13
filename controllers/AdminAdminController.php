@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\AdminManager;
+use app\views\adminAdmin;
+
 class AdminAdminController extends Controller {
 
     public function index() {
@@ -16,7 +18,8 @@ class AdminAdminController extends Controller {
             'admins' =>  $admins,
         ];
       
-        $this->render('adminAdmin',$params);
+        $admin=new adminAdmin();
+        $admin->afficher_adminAdmin($admins);
     }
 
     public function addAdmin()
@@ -34,8 +37,8 @@ class AdminAdminController extends Controller {
             'admins' =>  $admins,
         ];
         header('location:adminAdmin');
-        $this->render('adminAdmin',$params);
-        $this->render('adminAdmin');
+        $admin=new adminAdmin();
+        $admin->afficher_adminAdmin($admins);
     }
     public function supprimerAdmin() {
         session_start();
@@ -52,7 +55,8 @@ class AdminAdminController extends Controller {
             'admins'=> $admins,
         ];
         header('location:adminAdmin');
-        $this->render('adminAdmin',$params);
+        $admin=new adminAdmin();
+        $admin->afficher_adminAdmin($admins);
     }
         public function editAdmin()
         {        
@@ -68,7 +72,7 @@ class AdminAdminController extends Controller {
             $params = [
                 'admins' =>  $admins,
             ];
-            header('location:adminAdmin');
-            $this->render('adminAdmin',$params);
+            $admin=new adminAdmin();
+            $admin->afficher_adminAdmin($admins);
     }
 }

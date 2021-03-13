@@ -2,6 +2,9 @@
 namespace app\controllers;
 use app\models\ArticleManager;
 use app\models\PratiqueManager;
+use app\views\secondaire;
+use app\views\secondaireinfo;
+
 class SecondaireController extends Controller {
 
     public function index() {
@@ -11,7 +14,8 @@ class SecondaireController extends Controller {
             'articles' => $articles,
         ];
 
-        $this->render('secondaire',$params);
+        $secondaire=new secondaire();
+        $secondaire->afficher_secondaire($articles);
     }
     public function infoSecondaire() {
         $pratiqueManager=new PratiqueManager();
@@ -19,6 +23,7 @@ class SecondaireController extends Controller {
         $params = [
             'infos' => $infos,
         ];
-        $this->render('secondaireInfo',$params);
+        $secondaire=new secondaireinfo();
+        $secondaire->afficher_infosecondaire($infos);
     }
 }

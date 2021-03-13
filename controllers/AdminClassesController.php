@@ -2,6 +2,8 @@
 namespace app\controllers;
 use app\core\Request;
 use app\models\ClasseManager;
+use app\views\adminClasse;
+
 class AdminClassesController extends Controller {
 
     public function index() {
@@ -17,7 +19,8 @@ class AdminClassesController extends Controller {
             'classes' =>  $classes,
         ];
       
-        $this->render('adminClasse',$params);
+        $classe=new adminClasse();
+        $classe->afficher_adminClasse($classes);
     }
 
     public function addClasse()
@@ -35,8 +38,8 @@ class AdminClassesController extends Controller {
             'classes' =>  $classes,
         ];
         header('location:adminClasse');
-        $this->render('adminClasse',$params);
-        $this->render('adminClasse');
+        $classe=new adminClasse();
+        $classe->afficher_adminClasse($classes);
     }
     public function supprimerClasse() {
         session_start();
@@ -53,7 +56,8 @@ class AdminClassesController extends Controller {
             'classes'=> $classes,
         ];
         
-        $this->render('adminClasse',$params);
+        $classe=new adminClasse();
+        $classe->afficher_adminClasse($classes);
     }
         public function editClasse()
         {        
@@ -69,7 +73,7 @@ class AdminClassesController extends Controller {
             $params = [
                 'classes' =>  $classes,
             ];
-            header('location:adminClasse');
-            $this->render('adminClasse',$params);
+            $classe=new adminClasse();
+            $classe->afficher_adminClasse($classes);
     }
 }

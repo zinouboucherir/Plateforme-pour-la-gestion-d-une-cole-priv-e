@@ -2,6 +2,9 @@
 namespace app\controllers;
 use app\models\ArticleManager;
 use app\models\PratiqueManager;
+use app\views\moyen;
+use app\views\moyenInfo;
+
 class MoyenController extends Controller {
 
     public function index() {
@@ -11,7 +14,8 @@ class MoyenController extends Controller {
             'articles' => $articles,
         ];
 
-        $this->render('moyen',$params);
+        $moyen=new moyen();
+        $moyen->afficher_moyen($articles);
     }
     public function infoMoyen() {
         $pratiqueManager=new PratiqueManager();
@@ -19,7 +23,7 @@ class MoyenController extends Controller {
         $params = [
             'infos' => $infos,
         ];
-
-        $this->render('moyenInfo',$params);
+        $secondaire=new moyeninfo();
+        $secondaire->afficher_infomoyen($infos);
     }
 }

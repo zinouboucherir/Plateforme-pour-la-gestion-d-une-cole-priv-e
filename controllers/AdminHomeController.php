@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\UserManager;
+use app\views\adminHome;
+
 class AdminHomeController extends Controller {
 
     public function index() {
@@ -15,6 +17,7 @@ class AdminHomeController extends Controller {
     $params = [
         'infos' => $infos,
     ];
-        $this->render('AdminHome',$params);
+    $admin=new adminHome();
+    $admin->afficher_adminHome($infos);
     }
 }

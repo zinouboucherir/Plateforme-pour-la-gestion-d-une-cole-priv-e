@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\ArticleManager;
+use app\views\showarticle;
+
 class ShowArticleController extends Controller {
 
     public function showArticle() {
@@ -10,6 +12,7 @@ class ShowArticleController extends Controller {
         $params = [
             'article' => $article,
         ];
-        $this->render('showarticle',$params);
+        $sarticle=new showarticle();
+        $sarticle->afficher_showarticle($article);
     }
 }

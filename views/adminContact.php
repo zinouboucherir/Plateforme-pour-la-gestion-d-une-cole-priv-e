@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/accueilStyle.css">
-    <link rel="stylesheet" href="css/presentation.css">
-    <script src="JS/jquery.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="JS/bootstrap.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="JS/accueiljs.js"></script>
-</head>
-<body>
-
-<?php include('adminMenu.php') ?>
+<?php
+namespace app\views;
+class adminContact{
+public function adminContactbody($telephones,$adresse,$faxs,$emails){
+?>
 
 <!-- add Modal HTML -->
 <div id="addEmployeeModal1" class="modal fade">
@@ -33,12 +17,12 @@
                     <div class="form-group">	
                     <label>Téléphone</label>
                     <div class="form-group">	
-						<input type="texte" class="form-control" name="numero" required >				
+						<input type="texte" pattern="0[0-9]{9}" class="form-control" name="numero" required >				
                     </div>					
 				    </div>		
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="upload Emploi">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Ajouter">
 				</div>
 			</form>
 		</div>
@@ -81,16 +65,16 @@
 						<div class="modal-content">
 						<form>
 							<div class="modal-header">						
-								<h4 class="modal-title">Delete Employee</h4>
+								<h4 class="modal-title">Suuprimer numéro de téléphone</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 						<div class="modal-body">					
-							<p>Are you sure you want to delete these Records?</p>
-							<p class="text-warning"><small>This action cannot be undone.</small></p>
+							<p>Voulez-vous vraiment supprimer ce numéro</p>
+							<p class="text-warning"><small>son action ne peut être annulée.</small></p>
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"telephonedelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+							<a href="<?php echo"telephonedelete?id=".$data['id']?>" class="btn btn-danger text-center">Supprimer</a>
 						</div>
 				</form>
 			</div>
@@ -102,8 +86,8 @@
 		<div class="modal-content">
 		<form  method="POST" action="telephoneupdate" enctype="multipart/form-data">
                 <div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="modifier">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Modifier">
 				</div>
 				<div class="modal-header">						
 					<h4 class="modal-title">Modifier</h4>
@@ -114,7 +98,7 @@
                     <input hidden type="text" class="form-control" name="id" required value="<?php echo $data['id']?>">
                 </div>
                 <div class="form-group">	
-						<input type="texte" class="form-control" name="numero" required value="<?php echo $data['numero']?>">				
+						<input type="texte" pattern="0[0-9]{9}" class="form-control" name="numero" required value="<?php echo $data['numero']?>">				
                     </div>		
 				    </div>							
 				</div>
@@ -143,12 +127,12 @@
                     <div class="form-group">	
                     <label>Fax</label>
                     <div class="form-group">	
-						<input type="texte" class="form-control" name="fax" required >				
+						<input type="texte" pattern="0[0-9]{8}" class="form-control" name="fax" required >				
                     </div>					
 				    </div>		
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="upload Emploi">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Ajouter">
 				</div>
 			</form>
 		</div>
@@ -191,16 +175,16 @@
 						<div class="modal-content">
 						<form>
 							<div class="modal-header">						
-								<h4 class="modal-title">Delete Employee</h4>
+								<h4 class="modal-title">Supprimer fax</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 						<div class="modal-body">					
-							<p>Are you sure you want to delete these Records?</p>
-							<p class="text-warning"><small>This action cannot be undone.</small></p>
+							<p>Voulez-vous vraiment supprimer ce fax?</p>
+							<p class="text-warning"><small>son action ne peut être annulée.</small></p>
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"faxdelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+							<a href="<?php echo"faxdelete?id=".$data['id']?>" class="btn btn-danger text-center">Supprimer</a>
 						</div>
 				</form>
 			</div>
@@ -212,8 +196,8 @@
 		<div class="modal-content">
 		<form  method="POST" action="faxupdate" enctype="multipart/form-data">
                 <div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="modifier">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Modifier">
 				</div>
 				<div class="modal-header">						
 					<h4 class="modal-title">Modifier</h4>
@@ -224,7 +208,7 @@
                     <input hidden type="text" class="form-control" name="id" required value="<?php echo $data['id']?>">
                 </div>
                 <div class="form-group">	
-						<input type="texte" class="form-control" name="fax" required value="<?php echo $data['fax']?>">				
+						<input type="texte" pattern="0[0-9]{8}" class="form-control" name="fax" required value="<?php echo $data['fax']?>">				
                     </div>		
 				    </div>							
 				</div>
@@ -253,12 +237,12 @@
                     <div class="form-group">	
                     <label>Email</label>
                     <div class="form-group">	
-						<input type="texte" class="form-control" name="email" required >				
+						<input type="email" class="form-control" name="email" required >				
                     </div>					
 				    </div>		
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="upload Emploi">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Ajouter">
 				</div>
 			</form>
 		</div>
@@ -273,7 +257,7 @@
 						<h2>Gestion <b>des E-mails</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal3" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter un nouveau email</span></a>	
+						<a href="#addEmployeeModal3" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter un nouveau mail</span></a>	
 					</div>
 				</div>
 			</div>
@@ -301,16 +285,16 @@
 						<div class="modal-content">
 						<form>
 							<div class="modal-header">						
-								<h4 class="modal-title">Delete Employee</h4>
+								<h4 class="modal-title">Supprimer email</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 						<div class="modal-body">					
-							<p>Are you sure you want to delete these Records?</p>
-							<p class="text-warning"><small>This action cannot be undone.</small></p>
+							<p>Voulez-vous vraiment supprimer cet email?</p>
+							<p class="text-warning"><small>son action ne peut être annulée.</small></p>
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"emaildelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+							<a href="<?php echo"emaildelete?id=".$data['id']?>" class="btn btn-danger text-center">Supprimer</a>
 						</div>
 				</form>
 			</div>
@@ -322,8 +306,8 @@
 		<div class="modal-content">
 		<form  method="POST" action="emailupdate" enctype="multipart/form-data">
                 <div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="modifier">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Modifier">
 				</div>
 				<div class="modal-header">						
 					<h4 class="modal-title">Modifier</h4>
@@ -334,7 +318,7 @@
                     <input hidden type="text" class="form-control" name="id" required value="<?php echo $data['id']?>">
                 </div>
                 <div class="form-group">	
-						<input type="texte" class="form-control" name="email" required value="<?php echo $data['email']?>">				
+						<input type="email" class="form-control" name="email" required value="<?php echo $data['email']?>">				
                     </div>		
 				    </div>							
 				</div>
@@ -384,16 +368,16 @@
 						<div class="modal-content">
 						<form>
 							<div class="modal-header">						
-								<h4 class="modal-title">Delete Employee</h4>
+								<h4 class="modal-title">Supprimer Adresse</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 						<div class="modal-body">					
-							<p>Are you sure you want to delete these Records?</p>
-							<p class="text-warning"><small>This action cannot be undone.</small></p>
+							<p>Voulez-vous vraiment supprimer cette adresse?</p>
+							<p class="text-warning"><small>son action ne peut être annulée.</small></p>
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"adressedelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+							<a href="<?php echo"adressedelete?id=".$data['id']?>" class="btn btn-danger text-center">Supprimer</a>
 						</div>
 				</form>
 			</div>
@@ -405,8 +389,8 @@
 		<div class="modal-content">
 		<form  method="POST" action="adresseupdate" enctype="multipart/form-data">
                 <div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="modifier">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Modifier">
 				</div>
 				<div class="modal-header">						
 					<h4 class="modal-title">Modifier</h4>
@@ -429,5 +413,29 @@
 		</table>
 	</div>
 </section>
-</body>
-</html>
+<?php
+}
+public function afficher_adminContact($telephones,$adresse,$faxs,$emails){
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php
+    $h=new home_view();
+    $h->head();
+    ?>
+    <body>
+    <?php 
+    $header=new header();
+    $header->getheader();
+    $menu=new adminMenu();
+    $menu->getmenu();
+    $this->adminContactbody($telephones,$adresse,$faxs,$emails);
+	$footer=new footer();
+    $footer->getfooter();
+    ?>
+    </body>
+    </html>
+    <?php
+        }
+    }
+    ?>

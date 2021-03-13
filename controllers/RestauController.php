@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\RestaurationManager;
+use app\views\restauration;
+
 class RestauController extends Controller {
 
     public function index() {
@@ -9,7 +11,8 @@ class RestauController extends Controller {
         $params = [
             'restaus' => $restaus,
         ];
-        $this->render('restauration',$params);
+        $res=new restauration();
+        $res->afficher_resauration($restaus);
     }
 
 }

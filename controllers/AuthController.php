@@ -2,6 +2,8 @@
 namespace app\controllers;
 use app\core\Request;
 use app\models\UserManager;
+use app\views\login;
+
 class AuthController extends Controller {
 
     public function login(Request $request)
@@ -12,10 +14,11 @@ class AuthController extends Controller {
         if(isset($_SESSION['User']))
         {
         header('location:adminHome');
-        $this->render('adminHome');
+    
         }
     else{
-        return $this->render('login');
+        $login=new login();
+        $login->afficher_login();
         }   
 }
 
@@ -37,8 +40,6 @@ class AuthController extends Controller {
                    {
                     $_SESSION['User']=$result['id'];
                     header('location:adminHome');
-                 
-                    $this->render('adminHome');
                    }
                    else
                    {
@@ -52,7 +53,8 @@ class AuthController extends Controller {
     public function disconnect(){
         session_start();
         unset($_SESSION["User"]);
-        $this->render('login');
+        $login=new login();
+        $login->afficher_login();
     }
 
 

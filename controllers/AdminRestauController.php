@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\RestaurationManager;
+use app\views\adminRestauration;
+
 class AdminRestauController extends Controller {
 
     public function index() {
@@ -15,7 +17,8 @@ class AdminRestauController extends Controller {
         $params = [
             'restaus' => $restaus,
         ];
-        $this->render('adminRestauration',$params);
+        $res=new adminRestauration();
+        $res->afficher_adminRestauration($restaus);
     }
 
     public function addRestau()
@@ -32,8 +35,8 @@ class AdminRestauController extends Controller {
         $params = [
             'restaus' => $restaus,
         ];
-        $this->render('adminRestauration',$params);
-        $this->render('adminRestauration');
+        $res=new adminRestauration();
+        $res->afficher_adminRestauration($restaus);
     }
     public function supprimerRestau() {
         session_start();
@@ -49,7 +52,8 @@ class AdminRestauController extends Controller {
         $params = [
             'restaus' => $restaus,
         ];
-        $this->render('adminRestauration',$params);
+        $res=new adminRestauration();
+        $res->afficher_adminRestauration($restaus);
     }
 
     public function editRestau()
@@ -66,6 +70,7 @@ class AdminRestauController extends Controller {
         $params = [
             'restaus' => $restaus,
         ];
-        $this->render('adminRestauration',$params);
+        $res=new adminRestauration();
+        $res->afficher_adminRestauration($restaus);
     }
 }

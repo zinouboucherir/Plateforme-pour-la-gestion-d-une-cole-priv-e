@@ -3,6 +3,8 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Request;
 use app\models\PresentationManager;
+use app\views\adminPresentation;
+
 class AdminPresentationController extends Controller {
 
     public function index() {
@@ -17,7 +19,8 @@ class AdminPresentationController extends Controller {
         $params = [
             'presentations' => $presentations,
         ];
-        $this->render('adminPresentation',$params);
+        $presentation=new adminPresentation();
+        $presentation->afficher_adminPresentation($presentations);
     }
 
     public function addPresentation(Request $request)
@@ -42,8 +45,7 @@ class AdminPresentationController extends Controller {
             'presentations' =>  $presentations,
         ];
         header('location:adminPresentation');
-        $this->render('adminPresentation',$params);
-        $this->render('adminPresentation');
+  
     }
     public function supprimerPresentation() {
         session_start();
@@ -55,11 +57,7 @@ class AdminPresentationController extends Controller {
         $id=$_GET['id'];
         $presentationManager=new PresentationManager();
         $presentationManager->deletePresenation($id);
-        $presentation = $presentationManager->getPresentations();
-        $params = [
-            'presentations'=> $presentation,
-        ];
-        $this->render('adminPresentation',$params);
+        header('location:adminPresentation');
     }
 
     public function editPresentation(Request $request)
@@ -78,11 +76,6 @@ class AdminPresentationController extends Controller {
         move_uploaded_file($tempname, $folder);
         $folder= substr($folder,10);
         $presentationManager->updatePresentation($_POST['id'],$_POST['texte'],$folder,$_POST['titre']);
-        $presentations = $presentationManager->getPresentations();
-        $params = [
-            'presentations' =>  $presentations,
-        ];
         header('location:adminPresentation');
-        $this->render('adminPresentation',$params);
     }
 }

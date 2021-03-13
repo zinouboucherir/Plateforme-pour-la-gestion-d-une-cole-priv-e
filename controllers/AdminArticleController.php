@@ -3,6 +3,8 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Request;
 use app\models\ArticleManager;
+use app\views\adminArticles;
+
 class AdminArticleController extends Controller {
 
     public function index() {
@@ -17,7 +19,8 @@ class AdminArticleController extends Controller {
         $params = [
             'articles' => $articles,
         ];
-        $this->render('adminArticles',$params);
+        $article=new adminArticles();
+            $article->afficher_adminArticle($articles);
     }
 
     public function addArticles(Request $request)
@@ -42,8 +45,8 @@ class AdminArticleController extends Controller {
             'articles' => $articles,
         ];
         header('location:adminArticles');
-        $this->render('adminArticles',$params);
-        $this->render('adminArticles');
+        $article=new adminArticles();
+            $article->afficher_adminArticle($articles);
     }
     public function supprimerArticle() {
         session_start();
@@ -59,7 +62,8 @@ class AdminArticleController extends Controller {
         $params = [
             'articles' => $articles,
         ];
-        $this->render('adminArticles',$params);
+        $article=new adminArticles();
+        $article->afficher_adminArticle($articles);
     }
 
     public function editArticles(Request $request)
@@ -83,7 +87,7 @@ class AdminArticleController extends Controller {
         $params = [
             'articles' => $articles,
         ];
-        header('location:adminArticles');
-        $this->render('adminArticles',$params);
+        $article=new adminArticles();
+        $article->afficher_adminArticle($articles);
     }
 }

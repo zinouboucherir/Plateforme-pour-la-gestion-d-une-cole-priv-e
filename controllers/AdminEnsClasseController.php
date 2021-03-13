@@ -3,6 +3,8 @@ namespace app\controllers;
 
 use app\models\ClasseManager;
 use app\models\EnsClasseManager;
+use app\views\adminEnsClasse;
+
 class AdminEnsClasseController extends Controller {
 
     public function index() {
@@ -21,8 +23,9 @@ class AdminEnsClasseController extends Controller {
             'allclasse' =>  $allclasse,
             'id_ens' => $_GET['id'],
         ];
+        $enscl=new adminEnsClasse();
+        $enscl->afficher_adminEnsClasse($allclasse,$_GET['id'],$classes);
       
-        $this->render('adminEnsClasse',$params);
     }
 
     public function addEnsClasse()
@@ -41,8 +44,7 @@ class AdminEnsClasseController extends Controller {
             'id_ens' => $_GET['id'],
         ];
         header('location:adminEnsClasse?id='.$_GET['id']);
-        $this->render('adminEnsClasse',$params);
-        $this->render('adminEnsClasse');
+   
     }
     public function supprimerEnsClasse() {
         session_start();
@@ -60,6 +62,6 @@ class AdminEnsClasseController extends Controller {
             'classes'=> $classes,
         ];
         header('location:adminEnsClasse?id='.$_GET['id_ens']);
-        $this->render('adminEnsClasse',$params);
+    
     }
 }

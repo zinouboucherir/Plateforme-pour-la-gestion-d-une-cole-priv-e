@@ -2,6 +2,7 @@
 namespace app\controllers;
 use app\models\ArticleManager;
 use app\models\ContactManager;
+use app\views\home;
 class HomeController extends Controller {
 
     public function index() {
@@ -19,6 +20,8 @@ class HomeController extends Controller {
          'adresse'=>$adresse,
          'articles' => $articles,
         ];
-        $this->render('home',$params);
+        $home=new home();
+        $home->afficher_home($articles,$adresse,$emails,$faxs,$telephone);
+
     }
 }

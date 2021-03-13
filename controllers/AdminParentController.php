@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\ParentManager;
+use app\views\adminParent;
+
 class AdminParentController extends Controller {
 
     public function index() {
@@ -16,7 +18,8 @@ class AdminParentController extends Controller {
             'parents' =>  $parents,
         ];
       
-        $this->render('adminParent',$params);
+        $parent=new adminParent();
+         $parent->afficher_adminParent($parents);
     }
 
     public function addParent()
@@ -34,8 +37,7 @@ class AdminParentController extends Controller {
             'parents' =>  $parents,
         ];
         header('location:adminParent');
-        $this->render('adminParent',$params);
-        $this->render('adminParent');
+
     }
     public function supprimerParent() {
         session_start();
@@ -52,7 +54,7 @@ class AdminParentController extends Controller {
             'parents'=> $parents,
         ];
         header('location:adminParent');
-        $this->render('adminParent',$params);
+
     }
         public function editParent()
         {        
@@ -69,6 +71,5 @@ class AdminParentController extends Controller {
                 'parents' =>  $parents,
             ];
             header('location:adminParent');
-            $this->render('adminParent',$params);
     }
 }

@@ -3,6 +3,12 @@ namespace app\controllers;
 use app\models\ParentManager;
 use app\models\ArticleManager;
 use app\models\EmploiDuTempsManager;
+use app\views\emploiParent;
+use app\views\parentactivite;
+use app\views\parentinfo;
+use app\views\parentnote;
+use app\views\parentt;
+
 class ParentController extends Controller {
 
     public function index() {
@@ -20,7 +26,8 @@ class ParentController extends Controller {
         'infos' => $infos,
         'articles'=>$articles,
     ];
-        $this->render('parent',$params);
+    $parent=new parentt();
+    $parent->afficher_parent($infos,$articles);
     }
     public function infosparent() {
         session_start();
@@ -34,7 +41,8 @@ class ParentController extends Controller {
         $params = [
             'infos' => $infos,
         ];
-            $this->render('parentinfos',$params);
+        $info=new parentinfo();
+        $info->afficher_parentinfo($infos);
         }
 
         public function getParentEmploi() {
@@ -49,7 +57,8 @@ class ParentController extends Controller {
             $params = [
                 'emplois' => $emplois,
             ];
-            $this->render('emploiPARENT',$params);
+            $emploi=new emploiParent();
+            $emploi->afficher_emploiParent($emplois);
         }
 
         public function noteParent() {
@@ -65,7 +74,8 @@ class ParentController extends Controller {
             $params = [
                 'notes' => $notes,
             ];
-                $this->render('parentnote',$params);
+            $note=new parentnote();
+            $note->afficher_parentnote($notes);
             }
 
             public function activiteParent() {
@@ -81,7 +91,8 @@ class ParentController extends Controller {
                 $params = [
                     'activites' => $activites,
                 ];
-                    $this->render('parentactivite',$params);
+                $activite=new parentactivite();
+                $activite->afficher_parentactivite($activites);
                 }
     
 

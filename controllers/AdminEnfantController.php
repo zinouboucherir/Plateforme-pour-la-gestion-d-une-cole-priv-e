@@ -3,6 +3,8 @@ namespace app\controllers;
 
 use app\models\EleveManager;
 use app\models\EnfantManager;
+use app\views\adminEnfant;
+
 class AdminEnfantController extends Controller {
 
     public function index() {
@@ -22,7 +24,8 @@ class AdminEnfantController extends Controller {
             'id_parent' => $_GET['id'],
         ];
       
-        $this->render('adminEnfant',$params);
+        $enfant=new adminEnfant();
+        $enfant->afficher_adminEnfant($eleves,$enfants,$_GET['id']);
     }
 
     public function addEnfant()
@@ -41,8 +44,6 @@ class AdminEnfantController extends Controller {
             'id_parent' => $_GET['id'],
         ];
         header('location:adminEnfant?id='.$_GET['id']);
-        $this->render('adminEnfant',$params);
-        $this->render('adminEnfant');
     }
     public function supprimerEnfant() {
         session_start();
@@ -60,6 +61,6 @@ class AdminEnfantController extends Controller {
             'enfants'=> $enfants,
         ];
         header('location:adminEnfant?id='.$id_parent);
-        $this->render('adminEnfant',$params);
+    
     }
 }

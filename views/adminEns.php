@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/accueilStyle.css">
-    <link rel="stylesheet" href="css/presentation.css">
-    <script src="JS/jquery.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="JS/bootstrap.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="JS/accueiljs.js"></script>
-</head>
-<body>
-
-<?php include('adminMenu.php') ?>
+<?php
+namespace app\views;
+class adminEns{
+public function adminEnsbody($ens){
+?>
 
 <!-- add Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
@@ -32,11 +16,11 @@
 				<div class="modal-body">					
                     <div class="form-group">
                      <label>Nom</label>
-						<input type="texte" class="form-control" name="nom" required  >				
+						<input type="texte" pattern="[a-zA-Z]*" class="form-control" name="nom" required  >				
                     </div>	
                     <div class="form-group">
                      <label>Prénom</label>
-						<input type="texte" class="form-control" name="prenom" required  >				
+						<input type="texte" pattern="[a-zA-Z]*" class="form-control" name="prenom" required  >				
                     </div>
                     <div class="form-group">		
                     <label>Matiére</label>
@@ -66,8 +50,8 @@
 					</div>
                     </div>	
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="upload Emploi">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Ajouter">
 				</div>
 			</form>
 		</div>
@@ -80,7 +64,7 @@
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Gestion <b>des Enseignant</b></h2>
+						<h2>Gestion <b>des Enseignants</b></h2>
 					</div>
 					<div class="col-sm-6">
 						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter un nouvel enseignant</span></a>	
@@ -122,16 +106,16 @@
 						<div class="modal-content">
 						<form>
 							<div class="modal-header">						
-								<h4 class="modal-title">Delete Employee</h4>
+								<h4 class="modal-title">Supprimer enseignant </h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 						<div class="modal-body">					
-							<p>Are you sure you want to delete these Records?</p>
-							<p class="text-warning"><small>This action cannot be undone.</small></p>
+							<p>Voulez-vous vraiment supprimer cet enseignant?</p>
+							<p class="text-warning"><small>son action ne peut être annulée.</small></p>
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"ensdelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+							<a href="<?php echo"ensdelete?id=".$data['id']?>" class="btn btn-danger text-center">Supprimer</a>
 						</div>
 				</form>
 			</div>
@@ -143,8 +127,8 @@
 		<div class="modal-content">
 		<form  method="POST" action="ensupdate" enctype="multipart/form-data">
                 <div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="modifier">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Modifier">
 				</div>
 				<div class="modal-header">						
 					<h4 class="modal-title">Modifier</h4>
@@ -156,11 +140,11 @@
                 </div>
                 <div class="form-group">
                      <label>Nom</label>
-						<input type="texte" class="form-control" name="nom" required value="<?php echo $data['nom']?>" >				
+						<input type="texte" pattern="[a-zA-Z]*" class="form-control" name="nom" required value="<?php echo $data['nom']?>" >				
                     </div>	
                     <div class="form-group">
                      <label>Prénom</label>
-						<input type="texte" class="form-control" name="prenom" required value="<?php echo $data['prenom']?>" >				
+						<input type="texte"pattern="[a-zA-Z]*" class="form-control" name="prenom" required value="<?php echo $data['prenom']?>" >				
                     </div>
                     <div class="form-group">		
                     <label>Matiére</label>
@@ -203,6 +187,29 @@
 		</table>
 	</div>
 </section>
-
-</body>
-</html>
+<?php
+}
+public function afficher_adminEns($ens){
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php
+    $h=new home_view();
+    $h->head();
+    ?>
+    <body>
+    <?php 
+    $header=new header();
+    $header->getheader();
+    $menu=new adminMenu();
+    $menu->getmenu();
+    $this->adminEnsbody($ens);
+	$footer=new footer();
+    $footer->getfooter();
+    ?>
+    </body>
+    </html>
+    <?php
+        }
+    }
+    ?>

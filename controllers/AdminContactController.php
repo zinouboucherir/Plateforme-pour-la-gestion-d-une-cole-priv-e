@@ -3,6 +3,8 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Request;
 use app\models\ContactManager;
+use app\views\adminContact;
+
 class AdminContactController extends Controller {
 
     public function index() {
@@ -23,7 +25,9 @@ class AdminContactController extends Controller {
          'emails' =>$emails,
          'adresse'=>$adresse,
         ];
-        $this->render('adminContact',$params);
+        
+        $contact=new adminContact();
+        $contact->afficher_adminContact($telephone,$adresse,$faxs,$emails);
     }
 
     public function addTelephone()

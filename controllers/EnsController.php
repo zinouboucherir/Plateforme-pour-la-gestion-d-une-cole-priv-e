@@ -2,6 +2,10 @@
 namespace app\controllers;
 use app\core\Request;
 use app\models\EnsManager;
+use app\views\ensMoyen;
+use app\views\ensPrimaire;
+use app\views\ensSecondaire;
+
 class EnsController extends Controller {
 
     public function getPrimaireEns() {
@@ -10,7 +14,8 @@ class EnsController extends Controller {
         $params = [
             'ens' => $ens,
         ];
-        $this->render('ensPrimaire',$params);
+        $e=new ensPrimaire();
+        $e->afficher_ensPrimaire($ens);
     }
     public function getMoyenEns() {
         $ensManager=new EnsManager();
@@ -18,7 +23,8 @@ class EnsController extends Controller {
         $params = [
             'ens' => $ens,
         ];
-        $this->render('ensMoyen',$params);
+        $e=new ensMoyen();
+        $e->afficher_ensMoyen($ens);
     }
     public function getSecondaireEns() {
         $ensManager=new EnsManager();
@@ -26,7 +32,8 @@ class EnsController extends Controller {
         $params = [
             'ens' => $ens,
         ];
-        $this->render('ensSecondaire',$params);
+        $e=new ensSecondaire();
+        $e->afficher_ensSecondaire($ens);
     }
 
 }

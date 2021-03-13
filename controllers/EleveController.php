@@ -2,6 +2,13 @@
 namespace app\controllers;
 use app\models\EleveManager;
 use app\models\EmploiDuTempsManager;
+use app\views\eleve;
+use app\views\eleveactivite;
+use app\views\eleveinfos;
+use app\views\elevelogin;
+use app\views\elevenote;
+use app\views\emploiEleve;
+
 class EleveController extends Controller {
 
     public function index() {
@@ -17,7 +24,8 @@ class EleveController extends Controller {
     $params = [
         'infos' => $infos,
     ];
-        $this->render('eleve',$params);
+    $eleve=new eleve();
+    $eleve->afficher_eleve($infos);
     }
     public function getEleveEmploi() {
         session_start();
@@ -31,7 +39,8 @@ class EleveController extends Controller {
         $params = [
             'emplois' => $emplois,
         ];
-        $this->render('emploiEleve',$params);
+        $emploi=new emploiEleve();
+        $emploi->afficher_emploiEleve($emplois);
     }
 
     public function infoseleve() {
@@ -46,7 +55,8 @@ class EleveController extends Controller {
         $params = [
             'infos' => $infos,
         ];
-            $this->render('eleveinfos',$params);
+        $info=new eleveinfos();
+        $info->afficher_eleveinfo($infos);
         }
         public function noteEleve() {
             session_start();
@@ -61,7 +71,8 @@ class EleveController extends Controller {
             $params = [
                 'notes' => $notes,
             ];
-                $this->render('elevenote',$params);
+            $note=new elevenote();
+            $note->afficher_elevenote($notes);
             }
             public function activiteEleve() {
                 session_start();
@@ -76,6 +87,7 @@ class EleveController extends Controller {
                 $params = [
                     'activites' => $activites,
                 ];
-                    $this->render('eleveactivite',$params);
+                $act=new eleveactivite();
+                $act->afficher_eleveactivite($activites);
                 }
 }

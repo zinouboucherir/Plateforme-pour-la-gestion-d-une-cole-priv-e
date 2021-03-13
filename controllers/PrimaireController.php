@@ -2,6 +2,9 @@
 namespace app\controllers;
 use app\models\ArticleManager;
 use app\models\PratiqueManager;
+use app\views\primaire;
+use app\views\primaireinfo;
+
 class PrimaireController extends Controller {
 
     public function index() {
@@ -10,8 +13,9 @@ class PrimaireController extends Controller {
         $params = [
             'articles' => $articles,
         ];
-
-        $this->render('primaire',$params);
+        $primaire=new primaire();
+        $primaire->afficher_primaire($articles);
+    
     }
     public function infoPrimaire() {
         $pratiqueManager=new PratiqueManager();
@@ -19,6 +23,7 @@ class PrimaireController extends Controller {
         $params = [
             'infos' => $infos,
         ];
-        $this->render('primaireInfo',$params);
+        $primaire=new primaireinfo();
+        $primaire->afficher_infoprimaire($infos);
     }
 }

@@ -1,4 +1,10 @@
-   <section class=" bloc">
+<?php
+namespace app\views;
+class header{
+    public function getheader(){
+?>
+  
+  <section class=" bloc">
     <div class="container">
         <div class="row">
             <div class="col-4"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Round_Landmark_School_Icon_-_Transparent.svg/1024px-Round_Landmark_School_Icon_-_Transparent.svg.png" width="100" height="100" alt=""></div>
@@ -15,3 +21,8 @@
     </div>
  
    </section>
+   <br>
+   <?php
+    }
+}
+?>

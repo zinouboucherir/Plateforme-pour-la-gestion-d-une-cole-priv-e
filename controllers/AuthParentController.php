@@ -2,6 +2,7 @@
 namespace app\controllers;
 use app\core\Request;
 use app\models\UserManager;
+use app\views\parentlogin;
 class AuthParentController extends Controller {
 
     public function login(Request $request)
@@ -12,10 +13,11 @@ class AuthParentController extends Controller {
         if(isset($_SESSION['Parent']))
         {
         header('location:parent');
-        $this->render('parent');
+        
         }
     else{
-        return $this->render('parentlogin');
+        $login=new parentlogin();
+        $login->afficher_parentlogin();
         }   
     }
 
@@ -38,7 +40,7 @@ class AuthParentController extends Controller {
                    {
                     $_SESSION['Parent']=$result['id'];
                     header('location:parent');
-                    $this->render('parent');
+                    
                    }
                    else
                    {
@@ -51,6 +53,7 @@ class AuthParentController extends Controller {
     public function disconnect(){
         session_start();
         unset($_SESSION["Parent"]);
-        $this->render('parentlogin');
+        $login=new parentlogin();
+        $login->afficher_parentlogin();
     }
 }

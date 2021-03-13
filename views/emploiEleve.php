@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/accueilStyle.css">
-    <link rel="stylesheet" href="css/presentation.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-</head>
-<body>
-<?php include('header.php')?> 
-<br/>
-<?php include('menueleve.php')?>
-<br/>
-<br>
+<?php
+namespace app\views;
+class emploiEleve{
+public function emploiElevebody($emplois){
+?>
 <section>
 <div class="jumbotron page" id="page1">
 			<div class="table-title">
@@ -75,7 +60,29 @@
 </section>
 
 <br>
-<section><?php include('footer.php')?></section>
-
-</body>
-</html>
+<?php
+} 
+public function afficher_emploiEleve($emplois){
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php
+    $h=new home_view();
+    $h->head();
+    ?>
+    <body>
+    <?php 
+    $header=new header();
+    $header->getheader();
+    $menu=new menueleve();
+    $menu->getmenu();
+    $this->emploiElevebody($emplois);
+    $footer=new footer();
+    $footer->getfooter();
+    ?>
+    </body>
+    </html>
+    <?php
+        }
+    }
+    ?>

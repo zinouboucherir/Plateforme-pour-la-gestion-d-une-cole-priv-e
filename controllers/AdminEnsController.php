@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\EnsManager;
+use app\views\adminEns;
+
 class AdminEnsController extends Controller {
 
     public function index() {
@@ -16,7 +18,8 @@ class AdminEnsController extends Controller {
             'ens' =>  $ens,
         ];
       
-        $this->render('adminEns',$params);
+        $en=new adminEns();
+        $en->afficher_adminEns($ens);
     }
 
     public function addEns()
@@ -34,8 +37,7 @@ class AdminEnsController extends Controller {
             'ens' =>  $ens,
         ];
         header('location:adminEns');
-        $this->render('adminEns',$params);
-        $this->render('adminEns');
+       
     }
     public function supprimerEns() {
         session_start();
@@ -52,7 +54,7 @@ class AdminEnsController extends Controller {
             'ens'=> $ens,
         ];
         header('location:adminEns');
-        $this->render('adminEns',$params);
+       
     }
         public function editEns()
         {        
@@ -69,6 +71,6 @@ class AdminEnsController extends Controller {
                 'ens' =>  $ens,
             ];
             header('location:adminEns');
-            $this->render('adminEns',$params);
+      
     }
 }

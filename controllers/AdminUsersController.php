@@ -1,5 +1,8 @@
 <?php
 namespace app\controllers;
+
+use app\views\adminUsers;
+
 class AdminUsersController extends Controller {
 
     public function index() {
@@ -9,6 +12,7 @@ class AdminUsersController extends Controller {
         header('location:login');
         exit();
     }
-        $this->render('adminUsers');
+    $us=new adminUsers();
+    $us->afficher_adminUsers();
     }
 }

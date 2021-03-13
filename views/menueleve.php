@@ -1,4 +1,9 @@
-    
+<?php
+namespace app\views;
+class menueleve{
+    public function getmenu(){
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light ">
    
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,3 +33,7 @@
      </form>
    </div>
 </nav>
+<?php
+    }
+}
+?>

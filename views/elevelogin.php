@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>login</title>
-<link rel="stylesheet" href="css/loginstyle.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/accueilStyle.css">
-    <link rel="stylesheet" href="css/presentation.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</head>
-<style>
-    body{
-     background-image: url("https://typeachecklist.files.wordpress.com/2015/08/high-school-students.jpg");
-    }
-</style>
-<body>
-<?php include('menu.php')?>
+<?php
+namespace app\views;
+class elevelogin{
+public function eleveloginbody(){
+?>
 <div class="login-form" style="  opacity: 0.8;">
     <form action="elevelogin" method="post">
 		<div class="avatar">
@@ -61,5 +43,27 @@
 	
     </form>
 </div>
-</body>
-</html>
+<?php
+} 
+public function afficher_elevelogin(){
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php
+    $h=new home_view();
+    $h->head();
+    ?>
+    <body style="background-image: url('https://typeachecklist.files.wordpress.com/2015/08/high-school-students.jpg');">
+    <?php 
+
+    $menu=new menu();
+    $menu->getmenu();
+    $this->eleveloginbody();
+   
+    ?>
+    </body>
+    </html>
+    <?php
+        }
+    }
+    ?>

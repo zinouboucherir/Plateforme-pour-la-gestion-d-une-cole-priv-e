@@ -2,6 +2,7 @@
 namespace app\controllers;
 use app\core\Request;
 use app\models\UserManager;
+use app\views\elevelogin;
 class AuthEleveController extends Controller {
 
     public function login(Request $request)
@@ -12,10 +13,10 @@ class AuthEleveController extends Controller {
         if(isset($_SESSION['Eleve']))
         {
         header('location:eleve');
-        $this->render('eleve');
         }
     else{
-        return $this->render('elevelogin');
+        $login=new elevelogin();
+        $login->afficher_elevelogin();
         }   
     }
 
@@ -38,7 +39,6 @@ class AuthEleveController extends Controller {
                    {
                     $_SESSION['Eleve']=$result['id'];
                     header('location:eleve');
-                    $this->render('eleve');
                    }
                    else
                    {
@@ -51,6 +51,7 @@ class AuthEleveController extends Controller {
     public function disconnect(){
         session_start();
         unset($_SESSION["Eleve"]);
-        $this->render('elevelogin');
+        $login=new elevelogin();
+        $login->afficher_elevelogin();
     }
 }

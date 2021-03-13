@@ -1,7 +1,7 @@
 <?php
 namespace app\views;
-class secondaire{
-public function secondairebody($articles){
+class primaire_view{
+public function primairebody($articles){
 ?>
 <section>
 <div class="jumbotron page" id="page1">
@@ -11,28 +11,28 @@ public function secondairebody($articles){
                 <img src="https://image.freepik.com/free-photo/red-pin-event-calendar-background-close-up-time_37282-328.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Emplois du temps</h5>
-                     <p class="card-text">Consulter les emplois du temps globale du cycle secondaire. </p>
-                     <center><a href="emploiSecondaire" class="btn btn-info text-center">Consulter</a></center>
+                     <p class="card-text">Consulter les emplois du temps globale du cycle primaire. </p>
+                     <center><a href="emploiPrimaire" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
         <div class="col-sm-3 mb-2">
-            <div class="card">
+            <div class="card" >
                 <img src="https://img.aws.la-croix.com/2019/11/13/1201060070/premier-degre-enseignant-debutant-gagne-9-moins-moyenne-lOCDE_0_1400_933.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Enseignants </h5>
                      <p class="card-text">Consulter la liste des enseignant et leur heure de réception. </p>
-                     <center><a href="ensSecondaire" class="btn btn-info text-center">Consulter</a></center>
+                     <center><a href="ensPrimaire" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
-        <div class="col-sm-3 mb-2">
+        <div class="col-sm-3 mb-2 ">
             <div class="card">
                 <img src="https://www.authentikusa.com/uploads/images/orig/bon-a-savoir/informations-pratiques.jpg" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">informations pratiques</h5>
-                     <p class="card-text">Consulter toutes les informations pratiques qui vous interessent  </p>
-                     <center><a href="secondaireInfo" class="btn btn-info text-center">Consulter</a></center>
+                     <p class="card-text">Consulter vos informations pratiques  </p>
+                     <center><a href="primaireInfo" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
@@ -41,14 +41,17 @@ public function secondairebody($articles){
                 <img src="https://images.squarespace-cdn.com/content/56a2785c69a91af45e06a188/1523033881435-CHQ4W7OIJSDSVPS044ZG/restaurant-healthy-food-menu-program.png?format=1500w&content-type=image%2Fpng" class="card-img-top" width="100" height="200px" alt="...">
                  <div class="card-body">
                      <h5 class="card-title">Restauration</h5>
-                     <p class="card-text">vous pouvez consulter tout ce qui concerne la resaturation </p>
+                     <p class="card-text">vous pouvez consulter tout ce qui concerne la resaturation. </p>
                      <center><a href="restauration" class="btn btn-info text-center">Consulter</a></center>
                 </div>
             </div>
         </div>
     </div>
-</div>   
+</div>    
 </section>
+
+
+
 
 
 <h1 id="schoolname" style="color:cadetblue" class="text-center">Articles</h1>
@@ -77,30 +80,9 @@ public function secondairebody($articles){
 </div>   
 </section>
 
+
 <br/><br/>
 <?php
 } 
-public function afficher_secondaire($articles){
-    ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <?php
-    $h=new home_view();
-    $h->head();
-    ?>
-    <body>
-    <?php 
-    $header=new header();
-    $header->getheader();
-    $menu=new menu();
-    $menu->getmenu();
-    $this->secondairebody($articles);
-    $footer=new footer();
-    $footer->getfooter();
-    ?>
-    </body>
-    </html>
-    <?php
-        }
-    }
-    ?>
+}
+?>

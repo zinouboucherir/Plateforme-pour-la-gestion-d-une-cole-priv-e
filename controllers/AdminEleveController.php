@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\EleveManager;
+use app\views\adminEleve;
+
 class AdminEleveController extends Controller {
 
     public function index() {
@@ -13,13 +15,10 @@ class AdminEleveController extends Controller {
         $eleveManager=new EleveManager();
         $eleves=$eleveManager->getEleves();
         $classes=$eleveManager->getClassesForEleve();
-        $params = [
-            'eleves' =>  $eleves,
-            'classes' =>  $classes,
-        
-        ];
+        $eleve=new adminEleve();
+        $eleve->afficher_adminEleve($eleves,$classes);
       
-        $this->render('adminEleve',$params);
+     
     }
 
     public function addEleve()
@@ -38,8 +37,7 @@ class AdminEleveController extends Controller {
             'eleves' =>  $eleves,
         ];
         header('location:adminEleve');
-        $this->render('adminEleve',$params);
-        $this->render('adminEleve');
+     
     }
     public function supprimerEleve() {
         session_start();
@@ -56,7 +54,7 @@ class AdminEleveController extends Controller {
             'eleves'=> $eleves,
         ];
         header('location:adminEleve');
-        $this->render('adminEleve',$params);
+        
     }
         public function editEleve()
         {        
@@ -73,6 +71,6 @@ class AdminEleveController extends Controller {
                 'eleves' =>  $eleves,
             ];
             header('location:adminEleve');
-            $this->render('adminEleve',$params);
+          
     }
 }

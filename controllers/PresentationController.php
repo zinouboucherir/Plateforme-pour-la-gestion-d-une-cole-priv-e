@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\PresentationManager;
+use app\views\presentation;
+
 class PresentationController extends Controller {
 
     public function index() {
@@ -10,6 +12,7 @@ class PresentationController extends Controller {
             'presentations' => $presentations,
         ];
 
-        $this->render('presentation',$params);
+        $presentation=new presentation();
+        $presentation->afficher_presentation($presentations);
     }
 }

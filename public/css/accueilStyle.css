@@ -106,6 +106,13 @@ margin-right:2%;
   background-image:url(../images/eclairage-ecole-bon-1024x623.jpg);
   }
 }
+input[type=file]::file-selector-button {
+  border: 2px solid #052A4E;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color: white;
+  transition: 1s;
+}
 div.anim{
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-repeat:no-repeat;
@@ -116,7 +123,7 @@ div.anim{
     -webkit-animation-duration:10s;
     animation-iteration-count:infinite;
     width:90%;
-    margin-top:2%;
+
     margin-left:5%;
     margin-right:5%;
     height:70vh;

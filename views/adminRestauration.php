@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/accueilStyle.css">
-    <link rel="stylesheet" href="css/presentation.css">
-    <script src="JS/jquery.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="JS/bootstrap.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="JS/accueiljs.js"></script>
-</head>
-<body>
+<?php
+namespace app\views;
+class adminRestauration{
+public function adminRestaurationbody($restaus){
+?>
 
-<?php include('adminMenu.php') ?>
+
 
 <section>
 <div class="jumbotron page" id="page1">
@@ -63,16 +49,16 @@
 						<div class="modal-content">
 						<form>
 							<div class="modal-header">						
-								<h4 class="modal-title">Delete Employee</h4>
+								<h4 class="modal-title">Supprimer un jour</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 						<div class="modal-body">					
-							<p>Are you sure you want to delete these Records?</p>
-							<p class="text-warning"><small>This action cannot be undone.</small></p>
+							<p>Voulez-vous vraiment supprimer ce jour?</p>
+							<p class="text-warning"><small>son action ne peut être annulée.</small></p>
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"restaudelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+							<a href="<?php echo"restaudelete?id=".$data['id']?>" class="btn btn-danger text-center">Supprimer</a>
 						</div>
 				</form>
 			</div>
@@ -82,7 +68,7 @@
 <div id="editEmployeeModal<?php echo $data['id']?>" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-		<form  method="POST" action="restauupdate" enctype="multipart/form-data">>
+		<form  method="POST" action="restauupdate" enctype="multipart/form-data">
 				<div class="modal-header">						
 					<h4 class="modal-title">Modifier</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -115,8 +101,8 @@
 					</div>					
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="modifier">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Modifier">
 				</div>
 			</form>
 		</div>
@@ -172,25 +158,31 @@
 		</div>
 	</div>
 </div>
-<footer>
-    <div class="footer">
-        <ul>
-            <li class="footeritem"><a href="#" class="text-light">Accueil</a> </li>
-            <li class="footeritem"><a href="#presentation" class="text-light">Présentation</a></li>
-            <li class="footeritem"><a href="#" class="text-light">Primaire</a></li>
-            <li class="footeritem"><a href="#" class="text-light">Moyen</a></li>
-            <li class="footeritem"><a href="#" class="text-light">Secondaire</a></li>
-            <li class="footeritem"><a href="#" class="text-light">Espace éléve</a> </li>
-            <li class="footeritem"><a href="#" class="text-light">Espace Parent</a></li>
-        </ul>
-        <div>
-            <a href="#" class="fa fa-facebook footeritem text-light"></a>
-            <a href="#" class="fa fa-twitter footeritem text-light"></a>
-            <a href="#" class="fa fa-instagram footeritem text-light"></a>
-            <a href="#" class="fa fa-youtube footeritem text-light"></a>
-        </div>
-        <br/>
-   </div>
-</footer>
-</body>
-</html>
+
+<?php
+}
+public function afficher_adminRestauration($restaus){
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php
+    $h=new home_view();
+    $h->head();
+    ?>
+    <body>
+    <?php 
+    $header=new header();
+    $header->getheader();
+    $menu=new adminMenu();
+    $menu->getmenu();
+    $this->adminRestaurationbody($restaus);
+	$footer=new footer();
+    $footer->getfooter();
+    ?>
+    </body>
+    </html>
+    <?php
+        }
+    }
+    ?>
+

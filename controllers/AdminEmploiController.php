@@ -4,6 +4,8 @@ use app\core\Application;
 use app\core\Request;
 use app\models\ClasseManager;
 use app\models\EmploiDuTempsManager;
+use app\views\adminEmploi;
+
 class AdminEmploiController extends Controller {
 
     public function index() {
@@ -22,7 +24,8 @@ class AdminEmploiController extends Controller {
             'emplois' =>  $emplois,
         ];
       
-        $this->render('adminEmploi',$params);
+        $emploi=new adminEmploi();
+        $emploi->afficher_adminEmploi($emplois,$classes);
     }
 
     public function addEmploi(Request $request)
@@ -40,8 +43,7 @@ class AdminEmploiController extends Controller {
             'emplois' =>  $emplois,
         ];
         header('location:adminEmploi');
-        $this->render('adminEmploi',$params);
-        $this->render('adminEmploi');
+     
     }
     public function supprimerEmploi() {
         session_start();
@@ -58,7 +60,7 @@ class AdminEmploiController extends Controller {
             'emplois'=> $emplois,
         ];
         header('location:adminEmploi');
-        $this->render('adminEmploi',$params);
+      
     }
     public function editEmploi()
     {        
@@ -75,6 +77,6 @@ class AdminEmploiController extends Controller {
             'emplois' =>  $emplois,
         ];
         header('location:adminEmploi');
-        $this->render('adminEmploi',$params);
+       
     }
 }

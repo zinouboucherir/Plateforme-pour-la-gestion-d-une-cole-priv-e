@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use app\models\PratiqueManager;
+use app\views\showinfo;
+
 class ShowInfoController extends Controller {
 
     public function showInfo() {
@@ -10,6 +12,7 @@ class ShowInfoController extends Controller {
         $params = [
             'info' => $info,
         ];
-        $this->render('showinfo',$params);
+        $inf=new showinfo();
+        $inf->afficher_showinfo($info);
     }
 }

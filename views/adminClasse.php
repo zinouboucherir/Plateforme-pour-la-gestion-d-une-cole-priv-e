@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/accueilStyle.css">
-    <link rel="stylesheet" href="css/presentation.css">
-    <script src="JS/jquery.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="JS/bootstrap.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="JS/accueiljs.js"></script>
-</head>
-<body>
-
-<?php include('adminMenu.php') ?>
+<?php
+namespace app\views;
+class adminClasse{
+public function adminClassesbody($classes){
+?>
 <section>
 <div class="jumbotron page" id="page1">
 			<div class="table-title">
@@ -27,7 +11,7 @@
 						<h2>Gestion <b>des Classes</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter une nouvel classe</span></a>	
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter une nouvelle classe</span></a>	
 					</div>
 				</div>
 			</div>
@@ -60,16 +44,16 @@
 						<div class="modal-content">
 						<form>
 							<div class="modal-header">						
-								<h4 class="modal-title">Delete Employee</h4>
+								<h4 class="modal-title">Supprimer Classe</h4>
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 						<div class="modal-body">					
-							<p>Are you sure you want to delete these Records?</p>
-							<p class="text-warning"><small>This action cannot be undone.</small></p>
+							<p>Voulez-vous vraiment supprimer cette classe?</p>
+							<p class="text-warning"><small>son action ne peut être annulée..</small></p>
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							<a href="<?php echo"classedelete?id=".$data['id']?>" class="btn btn-danger text-center">Delete</a>
+							<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+							<a href="<?php echo"classedelete?id=".$data['id']?>" class="btn btn-danger text-center">Supprimer</a>
 						</div>
 				</form>
 			</div>
@@ -96,11 +80,11 @@
                 </div>	
                     <div class="form-group">
                      <label>Annnée</label>
-						<input type="number" class="form-control" name="annee" required value="<?php echo $data['annee']?>">				
+						<input type="number" min="1" class="form-control" name="annee" required value="<?php echo $data['annee']?>">				
                     </div>
                     <div class="form-group">
                      <label>Numéro de classe</label>
-						<input type="number" class="form-control" name="numroClasse" required value="<?php echo $data['numroClasse']?>" >				
+						<input type="number" min="1" class="form-control" name="numroClasse" required value="<?php echo $data['numroClasse']?>" >				
                     </div>		
                     <div class="form-group">
                      <label>Cycle</label>
@@ -138,11 +122,11 @@
 				<div class="modal-body">	
                 <div class="form-group">
                      <label>Annnée</label>
-						<input type="number" class="form-control" name="annee" required>				
+						<input type="number" min="1" class="form-control" name="annee" required>				
                     </div>
                     <div class="form-group">
                      <label>Numéro de classe</label>
-						<input type="number" class="form-control" name="numroClasse" required>				
+						<input type="number" min="1" class="form-control" name="numroClasse" required>				
                     </div>		
                     <div class="form-group">
                      <label>Cycle</label>
@@ -154,12 +138,36 @@
                     </div>									
 				    </div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input  class="btn btn-success" type="submit" name="upload" value="upload Emploi">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+					<input  class="btn btn-success" type="submit" name="upload" value="Ajouter">
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
-</body>
-</html>
+<?php
+}
+public function afficher_adminClasse($classes){
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php
+    $h=new home_view();
+    $h->head();
+    ?>
+    <body>
+    <?php 
+    $header=new header();
+    $header->getheader();
+    $menu=new adminMenu();
+    $menu->getmenu();
+    $this->adminClassesbody($classes);
+	$footer=new footer();
+    $footer->getfooter();
+    ?>
+    </body>
+    </html>
+    <?php
+        }
+    }
+    ?>

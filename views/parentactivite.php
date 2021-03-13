@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/accueilStyle.css">
-    <link rel="stylesheet" href="css/presentation.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-    <script src="JS/accueiljs.js"></script>
-</head>
-<body>
-<?php include('header.php')?> 
-<br/>
-<?php include('menueleve.php')?>
+<?php
+namespace app\views;
+class parentactivite{
+public function parentactivitebody($activites){
+?>
 <br/>
 <section>
 <div class="jumbotron page" id="page1">
@@ -59,6 +45,29 @@
 </section>
 
 <br>
-<?php include('footer.php')?>
-</body>
-</html>
+<?php 
+}
+public function afficher_parentactivite($activites){
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php
+    $h=new home_view();
+    $h->head();
+    ?>
+    <body>
+    <?php 
+    $header=new header();
+    $header->getheader();
+    $menu=new menuParent();
+    $menu->getmenu();
+    $this->parentactivitebody($activites);
+    $footer=new footer();
+    $footer->getfooter();
+    ?>
+    </body>
+    </html>
+    <?php
+        }
+    }
+    ?>
